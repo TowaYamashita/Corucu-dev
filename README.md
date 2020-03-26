@@ -1,24 +1,6 @@
-# README
+# README(v1.0)
+This document is README about my application , 'Corucu' .
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# What is "Corucu" ?
+"Corucu" is a web application that allows you to view and edit information related to classroom and additional examinations.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
