@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  changed_at: 2020-03-29
+  period: 1
+  subject: one
+
+two:
+  changed_at: 2020-03-29
+  period: 1
+  subject: two

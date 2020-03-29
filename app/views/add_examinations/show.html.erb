@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @add_examination.category %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @add_examination.subject %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @add_examination.place %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @add_examination.comment %>
+</p>
+
+<%= link_to 'Edit', edit_add_examination_path(@add_examination) %> |
+<%= link_to 'Back', add_examinations_path %>

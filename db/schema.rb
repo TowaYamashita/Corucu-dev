@@ -10,7 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2) do
+ActiveRecord::Schema.define(version: 5) do
+
+  create_table "add_examinations", force: :cascade do |t|
+    t.string "category"
+    t.integer "subject_id"
+    t.string "place"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_add_examinations_on_subject_id"
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.string "course"
+    t.string "instructor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "substitutes", force: :cascade do |t|
+    t.date "changed_at"
+    t.integer "period"
+    t.integer "subject_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_substitutes_on_subject_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

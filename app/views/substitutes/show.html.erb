@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Changed at:</strong>
+  <%= @substitute.changed_at %>
+</p>
+
+<p>
+  <strong>Period:</strong>
+  <%= @substitute.period %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @substitute.subject %>
+</p>
+
+<%= link_to 'Edit', edit_substitute_path(@substitute) %> |
+<%= link_to 'Back', substitutes_path %>

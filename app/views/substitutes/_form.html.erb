@@ -1,0 +1,32 @@
+<%= form_with(model: substitute, local: true) do |form| %>
+  <% if substitute.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(substitute.errors.count, "error") %> prohibited this substitute from being saved:</h2>
+
+      <ul>
+      <% substitute.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :changed_at %>
+    <%= form.date_select :changed_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :period %>
+    <%= form.number_field :period %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subject_id %>
+    <%= form.text_field :subject_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

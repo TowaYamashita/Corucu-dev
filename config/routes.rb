@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :add_examinations
+  resources :substitutes
+  resources :subjects
   devise_for :users
   root 'static_pages#home'
   
