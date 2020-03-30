@@ -1,7 +1,14 @@
-<% provide(:title, "Home") %>
-<h1>Corucu</h1>
-<p>
-  This is the home page for the
-  <a href="https://railstutorial.jp/">Ruby on Rails Tutorial</a>
-  sample application.
-</p>
+<div class="center jumbotron">
+
+  <h1>
+    Welcome to Corucu!
+  </h1>
+  
+  <div>
+    <%= link_to "授業変更情報の確認", substitutes_path, class: "btn btn-lg btn-info btn-block" %>
+    <%= link_to "追試再試情報の確認", add_examinations_path, class: "btn btn-lg btn-info btn-block" %>
+    <%= link_to "授業変更情報の追加", new_substitute_path, class: "btn btn-lg btn-default btn-block" %>
+    <%= link_to "追試再試情報の追加", new_add_examination_path, class: "btn btn-lg btn-default btn-block" %>
+  </div>
+
+</div>
