@@ -17,7 +17,7 @@
     <% @add_examinations.each do |add_examination| %>
       <tr>
         <td><%= add_examination.category %></td>
-        <td><%= add_examination.subject %></td>
+        <td><%= add_examination.subject.course %></td>
         <td><%= add_examination.place %></td>
         <td><%= add_examination.comment %></td>
         <td><%= link_to 'Show', add_examination %></td>

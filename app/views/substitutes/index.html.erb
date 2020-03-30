@@ -17,7 +17,7 @@
       <tr>
         <td><%= substitute.changed_at %></td>
         <td><%= substitute.period %></td>
-        <td><%= substitute.subject %></td>
+        <td><%= substitute.subject.course %></td>
         <td><%= link_to 'Show', substitute %></td>
         <td><%= link_to 'Edit', edit_substitute_path(substitute) %></td>
         <td><%= link_to 'Destroy', substitute, method: :delete, data: { confirm: 'Are you sure?' } %></td>
