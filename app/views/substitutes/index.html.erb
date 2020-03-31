@@ -2,7 +2,7 @@
 
 <h1>Substitutes</h1>
 
-<table>
+<table class="table table-bordered table-hover">
   <thead>
     <tr>
       <th>Changed at</th>
@@ -18,9 +18,9 @@
         <td><%= substitute.changed_at %></td>
         <td><%= substitute.period %></td>
         <td><%= substitute.subject.course %></td>
-        <td><%= link_to 'Show', substitute %></td>
-        <td><%= link_to 'Edit', edit_substitute_path(substitute) %></td>
-        <td><%= link_to 'Destroy', substitute, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', substitute, class: "btn btn-sm btn-info btn-block" %></td>
+        <td><%= link_to 'Edit', edit_substitute_path(substitute), class: "btn btn-sm btn-success btn-block" %></td>
+        <td><%= link_to 'Destroy', substitute, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger btn-block" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,6 @@
 
 <br>
 
-<%= link_to 'New Substitute', new_substitute_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Substitute', new_substitute_path, class: "btn btn-lg btn-success btn-block" %>
+<% end %>

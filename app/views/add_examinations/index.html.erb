@@ -2,7 +2,7 @@
 
 <h1>Add Examinations</h1>
 
-<table>
+<table class="table table-bordered table-hover">
   <thead>
     <tr>
       <th>Category</th>
@@ -20,9 +20,9 @@
         <td><%= add_examination.subject.course %></td>
         <td><%= add_examination.place %></td>
         <td><%= add_examination.comment %></td>
-        <td><%= link_to 'Show', add_examination %></td>
-        <td><%= link_to 'Edit', edit_add_examination_path(add_examination) %></td>
-        <td><%= link_to 'Destroy', add_examination, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', add_examination, class: "btn btn-sm btn-info btn-block" %></td>
+        <td><%= link_to 'Edit', edit_add_examination_path(add_examination), class: "btn btn-sm btn-success btn-block" %></td>
+        <td><%= link_to 'Destroy', add_examination, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger btn-block" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,6 @@
 
 <br>
 
-<%= link_to 'New Add Examination', new_add_examination_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Add Examination', new_add_examination_path, class: "btn btn-lg btn-success btn-block" %>
+<% end%>
