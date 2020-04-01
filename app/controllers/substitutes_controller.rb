@@ -1,4 +1,5 @@
 class SubstitutesController < ApplicationController
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
   before_action :set_substitute, only: [:show, :edit, :update, :destroy]
 
   # GET /substitutes
