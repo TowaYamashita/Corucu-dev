@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   resources :add_examinations
   resources :substitutes
   resources :subjects
-  devise_for :users
+  devise_for :users, controllers: {
+    confirmations: 'confirmations'
+  }
   root 'static_pages#home'
   
   get '/help', to:'static_pages#help'
