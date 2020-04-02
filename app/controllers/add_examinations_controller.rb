@@ -5,7 +5,9 @@ class AddExaminationsController < ApplicationController
   # GET /add_examinations
   # GET /add_examinations.json
   def index
-    @add_examinations = AddExamination.all
+    @q = AddExamination.ransack(params[:q])
+    # @add_examinations = AddExamination.all
+    @add_examinations = @q.result.includes(:subject)
   end
 
   # GET /add_examinations/1

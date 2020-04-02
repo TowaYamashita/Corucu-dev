@@ -5,7 +5,10 @@ class SubstitutesController < ApplicationController
   # GET /substitutes
   # GET /substitutes.json
   def index
-    @substitutes = Substitute.all
+    @q = Substitute.ransack(params[:q])
+    # @substitutes = Substitute.all
+    @substitutes = @q.result.includes(:subject)
+    
   end
 
   # GET /substitutes/1

@@ -1,0 +1,12 @@
+<div>
+    <%= search_form_for @q do |f| %>
+        <%= f.label :period_eq %>
+        <%= f.search_field :period_eq %>
+    
+        <%= f.label :subject_course_cont %>
+        <%= f.search_field :subject_course_cont %>
+        
+        <%= f.submit %>
+    <% end %>   
+
+</div>

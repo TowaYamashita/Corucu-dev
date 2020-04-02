@@ -1,11 +1,8 @@
 source 'https://rubygems.org'
 
+#default
 gem 'rails',        '5.2.4.2'
 gem "puma", ">= 3.12.4"
-gem "bootstrap-sass", ">= 3.4.1"
-gem 'config'
-gem 'devise'
-gem 'devise-bootstrap-views'
 gem 'sass-rails',   '5.0.6'
 gem 'uglifier',     '3.2.0'
 gem 'coffee-rails', '4.2.2'
@@ -13,9 +10,20 @@ gem 'jquery-rails', '4.3.1'
 gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.7.0'
 
+#bootstrap
+gem "bootstrap-sass", ">= 3.4.1"
+
+#registration
+gem 'config'
+gem 'devise'
+gem 'devise-bootstrap-views'
+
 #japanize
 # gem 'devise-i18n'
 # gem 'devise-i18n-views'
+
+#search-form
+gem 'ransack'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
