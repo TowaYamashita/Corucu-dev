@@ -21,8 +21,10 @@
         <td><%= add_examination.place %></td>
         <td><%= add_examination.comment %></td>
         <td><%= link_to 'Show', add_examination, class: "btn btn-sm btn-info btn-block" %></td>
-        <td><%= link_to 'Edit', edit_add_examination_path(add_examination), class: "btn btn-sm btn-success btn-block" %></td>
-        <td><%= link_to 'Destroy', add_examination, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger btn-block" %></td>
+        <% if user_signed_in? %>
+          <td><%= link_to 'Edit', edit_add_examination_path(add_examination), class: "btn btn-sm btn-success btn-block" %></td>
+          <td><%= link_to 'Destroy', add_examination, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger btn-block" %></td>
+      <% end %>
       </tr>
     <% end %>
   </tbody>
