@@ -1,10 +1,14 @@
 <div>
     <%= search_form_for @q do |f| %>
         <%= f.label :period_eq %>
-        <%= f.search_field :period_eq %>
-    
+        <%= f.radio_button :period_eq, "", {:checked => true} %>なし
+        <%= f.radio_button :period_eq, "1" %>1
+        <%= f.radio_button :period_eq, "2" %>2
+        <%= f.radio_button :period_eq, "3" %>3
+        <%= f.radio_button :period_eq, "4" %>4
+
         <%= f.label :subject_course_cont %>
-        <%= f.search_field :subject_course_cont %>
+        <%= f.collection_select :subject_id, Subject.all, :id, :course, :include_blank => '指定なし' %>
         
         <%= f.submit %>
     <% end %>   

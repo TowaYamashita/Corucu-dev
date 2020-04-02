@@ -1,7 +1,8 @@
 <div>
     <%= search_form_for @q do |f| %>
         <%= f.label :subject_course_cont %>
-        <%= f.search_field :subject_course_cont %>
+        <%= f.label :subject_course_cont %>
+        <%= f.collection_select :subject_id, Subject.all, :id, :course, :include_blank => '指定なし' %>
         <%= f.submit %>
     <% end %>
 
