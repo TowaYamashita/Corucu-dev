@@ -6,7 +6,7 @@
     <div class="panel-body">
         <%= search_form_for @q do |f| %>
             <%= f.label :category_cont %>
-            <%= f.radio_button :category_cont, "", {:checked => true} %>選択なし
+            <%= f.radio_button :category_cont, "", {:checked => true} %>指定なし
             <%= f.radio_button :category_cont, "追試" %>追試
             <%= f.radio_button :category_cont, "再試" %>再試
             <br>

@@ -6,7 +6,7 @@
     <div class="panel-body">
         <%= search_form_for @q do |f| %>
             <%= f.label :period_eq %>
-            <%= f.radio_button :period_eq, "", {:checked => true} %>選択なし
+            <%= f.radio_button :period_eq, "", {:checked => true} %>指定なし
             <%= f.radio_button :period_eq, "1" %>1
             <%= f.radio_button :period_eq, "2" %>2
             <%= f.radio_button :period_eq, "3" %>3
