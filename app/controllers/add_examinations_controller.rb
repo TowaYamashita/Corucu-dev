@@ -27,7 +27,10 @@ class AddExaminationsController < ApplicationController
   # POST /add_examinations
   # POST /add_examinations.json
   def create
-    @add_examination = AddExamination.new(add_examination_params)
+    @add_examination = AddExamination.new(
+      add_examination_params,
+      user_id: @current_user.id
+    )
 
     respond_to do |format|
       if @add_examination.save

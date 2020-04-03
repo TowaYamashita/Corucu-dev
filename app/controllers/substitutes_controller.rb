@@ -28,7 +28,10 @@ class SubstitutesController < ApplicationController
   # POST /substitutes
   # POST /substitutes.json
   def create
-    @substitute = Substitute.new(substitute_params)
+    @substitute = Substitute.new(
+      substitute_params,
+      user_id: @current_user.id
+    )
 
     respond_to do |format|
       if @substitute.save
