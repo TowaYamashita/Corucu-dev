@@ -1,5 +1,5 @@
 <h1>
-  <%= t('activerecord.models.substitute') + "情報の一覧" %>
+  <%= t('activerecord.models.substitutes') + "情報の一覧" %>
 </h1>
 
 <%= render 'search_form' %>
@@ -25,7 +25,7 @@
           <td><%= substitute.period %></td>
           <td><%= substitute.subject.course %></td>
           <td><%= link_to 'Show', substitute, class: "btn btn-sm btn-info btn-block" %></td>
-          <% if user_signed_in? && current_user.id == substitute.user_id %>
+          <% if user_signed_in? && substitute.user_id == current_user.id %>
             <td><%= link_to 'Edit', edit_substitute_path(substitute), class: "btn btn-sm btn-success btn-block" %></td>
             <td><%= link_to 'Destroy', substitute, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger btn-block" %></td>
           <% end %>
