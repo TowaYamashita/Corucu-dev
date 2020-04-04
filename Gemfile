@@ -19,8 +19,8 @@ gem 'devise'
 gem 'devise-bootstrap-views'
 
 #japanize
-# gem 'devise-i18n'
-# gem 'devise-i18n-views'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
 
 #search-form
 gem 'ransack'

@@ -74,6 +74,9 @@ GEM
       responders
       warden (~> 1.2.3)
     devise-bootstrap-views (1.1.0)
+    devise-i18n (1.9.1)
+      devise (>= 4.7.1)
+    devise-i18n-views (0.3.7)
     dry-configurable (0.11.5)
       concurrent-ruby (~> 1.0)
       dry-core (~> 0.4, >= 0.4.7)
@@ -282,6 +285,8 @@ DEPENDENCIES
   config
   devise
   devise-bootstrap-views
+  devise-i18n
+  devise-i18n-views
   guard (= 2.13.0)
   guard-minitest (= 2.4.4)
   jbuilder (= 2.7.0)

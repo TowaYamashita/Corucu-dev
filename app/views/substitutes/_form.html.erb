@@ -12,17 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :changed_at %>
+    <%= form.label :changed_at, t('activerecord.attributes.substitute.changed_at') %>
     <%= form.date_select :changed_at %>
   </div>
 
   <div class="field">
-    <%= form.label :period %>
+    <%= form.label :period, t('activerecord.attributes.substitute.period') %>
     <%= form.number_field :period %>
   </div>
 
   <div class="field">
-    <%= form.label :subject_id %>
+    <%= form.label :subject_id,  t('activerecord.attributes.subject.course') %>
     <!-- <%= form.text_field :subject_id %> -->
     <%= form.collection_select :subject_id, Subject.all, :id, :course %>
   </div>
