@@ -11,8 +11,8 @@
             <%= f.radio_button :category_cont, "再試" %>再試
             <br>
             
-            <%= f.label :subject_course_cont, t('activerecord.attributes.subject.course') %>
-            <%= f.collection_select :subject_id, Subject.all, :id, :course, :include_blank => '指定なし' %>
+            <%= f.label :subject_id_eq, t('activerecord.attributes.subject.course') %>
+            <%= f.collection_select :subject_id_eq, Subject.all, :id, :course, :include_blank => '指定なし' %>
             
             <br>
 

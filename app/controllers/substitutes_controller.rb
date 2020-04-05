@@ -1,5 +1,6 @@
 class SubstitutesController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
   before_action :set_substitute, only: [:show, :edit, :update, :destroy]
 
   # GET /substitutes
@@ -28,10 +29,7 @@ class SubstitutesController < ApplicationController
   # POST /substitutes
   # POST /substitutes.json
   def create
-    @substitute = Substitute.new(
-      substitute_params,
-      user_id: @current_user.id
-    )
+    @substitute = @current_user.substitutes.build(substitute_params)
 
     respond_to do |format|
       if @substitute.save
@@ -76,6 +74,15 @@ class SubstitutesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def substitute_params
-      params.require(:substitute).permit(:changed_at, :period, :subject_id)
+      params.require(:substitute).permit(:changed_at, :period, :subject_id, :user_id)
     end
+
+    def ensure_correct_user
+      @substitute = Substitute.find_by(id:params[:id])
+      if @substitute.user_id != @current_user.id
+        flash[:notice] = "権限がありません"
+        redirect_to substitutes_path
+      end
+    end
+
 end

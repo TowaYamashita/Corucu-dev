@@ -1,5 +1,6 @@
 class AddExaminationsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
   before_action :set_add_examination, only: [:show, :edit, :update, :destroy]
 
   # GET /add_examinations
@@ -27,10 +28,7 @@ class AddExaminationsController < ApplicationController
   # POST /add_examinations
   # POST /add_examinations.json
   def create
-    @add_examination = AddExamination.new(
-      add_examination_params,
-      user_id: @current_user.id
-    )
+    @add_examination = @current_user.add_examinations.build(add_examination_params)
 
     respond_to do |format|
       if @add_examination.save
@@ -77,4 +75,13 @@ class AddExaminationsController < ApplicationController
     def add_examination_params
       params.require(:add_examination).permit(:category, :subject_id, :place, :comment)
     end
+
+    def ensure_correct_user
+      @add_examination = AddExamination.find_by(id:params[:id])
+      if @add_examination.user_id != @current_user.id
+        flash[:notice] = "権限がありません"
+        redirect_to add_examinations_path
+      end
+    end
+
 end
