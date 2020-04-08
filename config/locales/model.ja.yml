@@ -12,6 +12,7 @@ ja:
         changed_at: "日付"
         period: "時限"
       add_examination:
+        scheduled_at: "予定日"
         category: "試験の種類"
         place: "場所"
         comment: "コメント"

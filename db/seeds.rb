@@ -34,10 +34,10 @@ substitutes = Substitute.create([
 
 # AddExaminations
 add_examinations = AddExamination.create([
-    {:category => "追試", :subject_id => 1, :user_id => 2, :place => "classroom", :comment => "test1"},
-    {:category => "追試", :subject_id => 3, :user_id => 1, :place => "library", :comment => "test2"},
-    {:category => "追試", :subject_id => 5, :user_id => 2, :place => "ict1", :comment => "test3"},
-    {:category => "再試", :subject_id => 2, :user_id => 1, :place => "ict2", :comment => ""},
-    {:category => "再試", :subject_id => 3, :user_id => 2, :place => "labo-A", :comment => "test4"},
-    {:category => "再試", :subject_id => 4, :user_id => 1, :place => "labo-B", :comment => ""}
+    {:scheduled_at => "2020-04-04", :category => "追試", :subject_id => 1, :user_id => 2, :place => "classroom", :comment => "test1"},
+    {:scheduled_at => "2020-04-05", :category => "追試", :subject_id => 3, :user_id => 1, :place => "library", :comment => "test2"},
+    {:scheduled_at => "2020-04-06", :category => "追試", :subject_id => 5, :user_id => 2, :place => "ict1", :comment => "test3"},
+    {:scheduled_at => "2020-04-07", :category => "再試", :subject_id => 2, :user_id => 1, :place => "ict2", :comment => ""},
+    {:scheduled_at => "2020-04-08", :category => "再試", :subject_id => 3, :user_id => 2, :place => "labo-A", :comment => "test4"},
+    {:scheduled_at => "2020-04-09", :category => "再試", :subject_id => 4, :user_id => 1, :place => "labo-B", :comment => ""}
 ])

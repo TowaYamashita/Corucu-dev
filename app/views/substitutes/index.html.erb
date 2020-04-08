@@ -11,7 +11,7 @@
   <table class="table table-bordered table-hover">
     <thead>
       <tr>
-        <th><%= t('activerecord.attributes.substitute.changed_at') %></th>
+        <th><%= sort_link(@q, :changed_at, t('activerecord.attributes.substitute.changed_at'), default_order: :desc) %></th>
         <th><%= t('activerecord.attributes.substitute.period') %></th>
         <th><%= t('activerecord.attributes.subject.course') %></th>
         <th colspan="3"></th>

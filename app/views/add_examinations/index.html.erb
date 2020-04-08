@@ -11,7 +11,7 @@
   <table class="table table-bordered table-hover">
     <thead>
       <tr>
-        <th><%= t('activerecord.attributes.add_examination.category') %></th>
+        <th><%= sort_link(@q, :scheduled_at, t('activerecord.attributes.add_examination.scheduled_at'), default_order: :desc) %></th>
         <th><%= t('activerecord.attributes.subject.course') %></th>
         <th><%= t('activerecord.attributes.add_examination.place') %></th>
         <th><%= t('activerecord.attributes.add_examination.comment') %></th>
@@ -22,7 +22,7 @@
     <tbody>
       <% @add_examinations.each do |add_examination| %>
         <tr>
-          <td><%= add_examination.category %></td>
+          <td><%= add_examination.scheduled_at %></td>
           <td><%= add_examination.subject.course %></td>
           <td><%= add_examination.place %></td>
           <td><%= add_examination.comment %></td>
