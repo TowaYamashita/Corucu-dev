@@ -18,6 +18,10 @@
             <%= f.collection_select :subject_id_eq, Subject.all, :id, :course, :include_blank => '指定なし' %>
         
             <br>
+            
+            <%= f.date_field :changed_at_gteq %>~<%= f.date_field :changed_at_lteq_end_of_day %>
+
+            <br>
 
             <%= f.submit %>
         <% end %>   
