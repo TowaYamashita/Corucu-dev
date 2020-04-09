@@ -18,12 +18,14 @@
             <%= f.collection_select :subject_id_eq, Subject.all, :id, :course, :include_blank => '指定なし' %>
         
             <br>
-            
+
+            <%= f.label :changed_at, t('activerecord.attributes.substitute.changed_at') %>
             <%= f.date_field :changed_at_gteq %>~<%= f.date_field :changed_at_lteq_end_of_day %>
 
             <br>
+            
+            <%= f.submit nil , :class => 'btn btn-primary' %>
 
-            <%= f.submit %>
         <% end %>   
     </div>
 

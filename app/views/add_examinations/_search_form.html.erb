@@ -16,11 +16,12 @@
             
             <br>
 
+            <%= f.label :scheduled_at, t('activerecord.attributes.add_examination.scheduled_at') %>
             <%= f.date_field :scheduled_at_gteq %>~<%= f.date_field :scheduled_at_lteq_end_of_day %>
 
             <br>
 
-            <%= f.submit %>
+            <%= f.submit nil , :class => 'btn btn-primary' %>
         <% end %>
     </div>
 
