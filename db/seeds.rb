@@ -8,14 +8,24 @@
 
 # coding: utf-8
 
-# User
-users = User.create([
-    {:username => 'guest01', :email => 'test1@example.com', :password => 'asdfgh', :confirmed_at => Time.now},
-    {:username => 'guest02', :email => 'test2@example.com', :password => 'aqswde', :confirmed_at => Time.now}
+# Permissions
+Permission.create([
+    {:level => "ゲスト"},
+    {:level => "学生"},
+    {:level => "教授"},
+    {:level => "管理者"}
+])
+
+# Users
+User.create([
+    {:username => 'admin',     :email => 'admin@example.com',       :password => 'asdfgh', :confirmed_at => Time.now, :permission_id => 4},
+    {:username => 'professor', :email => 'professor@example.com',  :password => 'aqswde', :confirmed_at => Time.now, :permission_id => 3},
+    {:username => 'student',   :email => 'student@example.com', :password => 'qxevrb', :confirmed_at => Time.now, :permission_id => 2},
+    {:username => 'guest',     :email => 'guest@example.com',       :password => 'wvrbth', :confirmed_at => Time.now, :permission_id => 1}
 ])
 
 # Subjects
-subjects = Subject.create([
+Subject.create([
     {:course => "A", :instructor => "Alice"},
     {:course => "B", :instructor => "Bob"},
     {:course => "C", :instructor => "Chris"},
@@ -24,7 +34,7 @@ subjects = Subject.create([
 ])
 
 # Substitutes
-substitutes = Substitute.create([
+Substitute.create([
     {:changed_at => "2020-04-04", :period => 1, :subject_id => 1, :user_id => 1},
     {:changed_at => "2020-04-05", :period => 2, :subject_id => 2, :user_id => 2},
     {:changed_at => "2020-04-06", :period => 3, :subject_id => 3, :user_id => 1},
@@ -33,7 +43,7 @@ substitutes = Substitute.create([
 ])
 
 # AddExaminations
-add_examinations = AddExamination.create([
+AddExamination.create([
     {:scheduled_at => "2020-04-04", :category => "追試", :subject_id => 1, :user_id => 2, :place => "classroom", :comment => "test1"},
     {:scheduled_at => "2020-04-05", :category => "追試", :subject_id => 3, :user_id => 1, :place => "library", :comment => "test2"},
     {:scheduled_at => "2020-04-06", :category => "追試", :subject_id => 5, :user_id => 2, :place => "ict1", :comment => "test3"},

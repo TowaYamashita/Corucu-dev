@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 8) do
+ActiveRecord::Schema.define(version: 10) do
 
   create_table "add_examinations", force: :cascade do |t|
     t.string "category"
@@ -23,6 +23,12 @@ ActiveRecord::Schema.define(version: 8) do
     t.date "scheduled_at"
     t.index ["subject_id"], name: "index_add_examinations_on_subject_id"
     t.index ["user_id"], name: "index_add_examinations_on_user_id"
+  end
+
+  create_table "permissions", force: :cascade do |t|
+    t.string "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -56,8 +62,10 @@ ActiveRecord::Schema.define(version: 8) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
+    t.integer "permission_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["permission_id"], name: "index_users_on_permission_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
