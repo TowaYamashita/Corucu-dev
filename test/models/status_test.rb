@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PermissionTest < ActiveSupport::TestCase
+class StatusTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

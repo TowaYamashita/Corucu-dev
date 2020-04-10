@@ -25,10 +25,11 @@ ActiveRecord::Schema.define(version: 10) do
     t.index ["user_id"], name: "index_add_examinations_on_user_id"
   end
 
-  create_table "permissions", force: :cascade do |t|
-    t.string "level"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "statuses", force: :cascade do |t|
+    t.boolean "admin_flag", default: false, null: false
+    t.boolean "professor_flag", default: false, null: false
+    t.boolean "student_flag", default: false, null: false
+    t.boolean "guest_flag", default: false, null: false
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -62,11 +63,12 @@ ActiveRecord::Schema.define(version: 10) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
-    t.integer "permission_id"
+    t.integer "status_id"
+    t.boolean "admin_user", default: false, null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["permission_id"], name: "index_users_on_permission_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["status_id"], name: "index_users_on_status_id"
   end
 
 end

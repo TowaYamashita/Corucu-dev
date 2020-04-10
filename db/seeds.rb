@@ -8,20 +8,20 @@
 
 # coding: utf-8
 
-# Permissions
-Permission.create([
-    {:level => "ゲスト"},
-    {:level => "学生"},
-    {:level => "教授"},
-    {:level => "管理者"}
+# Statuses
+Status.create([
+    {:admin_flag => 1},
+    {:professor_flag => 1},
+    {:student_flag => 1},
+    {:guest_flag => 1}
 ])
 
 # Users
 User.create([
-    {:username => 'admin',     :email => 'admin@example.com',       :password => 'asdfgh', :confirmed_at => Time.now, :permission_id => 4},
-    {:username => 'professor', :email => 'professor@example.com',  :password => 'aqswde', :confirmed_at => Time.now, :permission_id => 3},
-    {:username => 'student',   :email => 'student@example.com', :password => 'qxevrb', :confirmed_at => Time.now, :permission_id => 2},
-    {:username => 'guest',     :email => 'guest@example.com',       :password => 'wvrbth', :confirmed_at => Time.now, :permission_id => 1}
+    {:username => 'admin',     :email => 'admin@example.com',       :password => 'asdfgh', :confirmed_at => Time.now, :status_id => 1, :admin_user => true},
+    {:username => 'professor', :email => 'professor@example.com',  :password => 'aqswde', :confirmed_at => Time.now, :status_id => 2},
+    {:username => 'student',   :email => 'student@example.com', :password => 'qxevrb', :confirmed_at => Time.now, :status_id => 3},
+    {:username => 'guest',     :email => 'guest@example.com',       :password => 'wvrbth', :confirmed_at => Time.now, :status_id => 4}
 ])
 
 # Subjects
