@@ -27,9 +27,12 @@
           <td><%= add_examination.place %></td>
           <td>
             <% if add_examination.comment.empty? %>
-              <%= "無" %>
+              <span class="fa-stack">
+                <i class="fa fa-commenting-o fa-stack-2x fa-stack-1x"></i>
+                <i class="fa fa-ban fa-stack-2x text-danger" style="color:red;"></i>
+              </span>
             <% else %>
-              <%= "有" %>
+              <i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>
             <% end %>
           </td>
           <td><%= link_to 'Show', add_examination, class: "btn btn-sm btn-info btn-block" %></td>
