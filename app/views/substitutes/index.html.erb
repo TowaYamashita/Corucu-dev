@@ -14,6 +14,7 @@
         <th><%= sort_link(@q, :changed_at, t('activerecord.attributes.substitute.changed_at'), default_order: :desc) %></th>
         <th><%= t('activerecord.attributes.substitute.period') %></th>
         <th><%= t('activerecord.attributes.subject.course') %></th>
+        <th><%= t('activerecord.attributes.substitute.comment') %></th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -24,6 +25,13 @@
           <td><%= substitute.changed_at %></td>
           <td><%= substitute.period %></td>
           <td><%= substitute.subject.course %></td>
+          <td>
+            <% if substitute.comment.empty? %>
+              <%= "無" %>
+            <% else %>
+              <%= "有" %>
+            <% end %>
+          </td>
           <td><%= link_to 'Show', substitute, class: "btn btn-sm btn-info btn-block" %></td>
           <% if user_signed_in? && ( substitute.user_id == current_user.id || current_user.admin_user == true ) %>
             <td><%= link_to 'Edit', edit_substitute_path(substitute), class: "btn btn-sm btn-success btn-block" %></td>

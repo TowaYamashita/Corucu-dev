@@ -35,11 +35,11 @@ Subject.create([
 
 # Substitutes
 Substitute.create([
-    {:changed_at => "2020-04-04", :period => 1, :subject_id => 1, :user_id => 1},
-    {:changed_at => "2020-04-05", :period => 2, :subject_id => 2, :user_id => 2},
-    {:changed_at => "2020-04-06", :period => 3, :subject_id => 3, :user_id => 1},
-    {:changed_at => "2020-04-07", :period => 4, :subject_id => 4, :user_id => 2},
-    {:changed_at => "2020-04-08", :period => 3, :subject_id => 5, :user_id => 1}
+    {:changed_at => "2020-04-04", :period => 1, :subject_id => 1, :user_id => 1, :comment => "This is test message."},
+    {:changed_at => "2020-04-05", :period => 2, :subject_id => 2, :user_id => 2, :comment => ""},
+    {:changed_at => "2020-04-06", :period => 3, :subject_id => 3, :user_id => 1, :comment => "授業変更"},
+    {:changed_at => "2020-04-07", :period => 4, :subject_id => 4, :user_id => 2, :comment => ""},
+    {:changed_at => "2020-04-08", :period => 3, :subject_id => 5, :user_id => 1, :comment => "Bobが代わりに講義を行います"}
 ])
 
 # AddExaminations

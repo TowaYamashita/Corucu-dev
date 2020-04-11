@@ -19,5 +19,12 @@
   <%= @substitute.subject.course %>
 </p>
 
+<p>
+  <strong>
+    <%= t('activerecord.attributes.substitute.comment') %>
+  </strong>
+  <%= @substitute.comment %>
+</p>
+
 <%= link_to 'Edit', edit_substitute_path(@substitute) %> |
 <%= link_to 'Back', substitutes_path %>

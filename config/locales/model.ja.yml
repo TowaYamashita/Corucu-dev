@@ -11,6 +11,7 @@ ja:
       substitute:
         changed_at: "日付"
         period: "時限"
+        comment: "コメント"
       add_examination:
         scheduled_at: "予定日"
         category: "試験の種類"
