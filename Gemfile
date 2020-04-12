@@ -12,7 +12,7 @@ gem 'jbuilder',     '2.7.0'
 
 # bootstrap(update 3 -> 4)
 # gem "bootstrap-sass", ">= 3.4.1"
-gem 'bootstrap', '~> 4.1.1'
+gem "bootstrap", ">= 4.3.1"
 
 # registration
 gem 'config'
