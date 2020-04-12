@@ -1,9 +1,9 @@
-<div class="panel panel-primary">
-    <div class="panel-heading">
+<div class="card border-primary">
+    <div class="card-header text-white bg-primary">
 	    検索
 	</div>
 
-    <div class="panel-body">
+    <div class="card-body">
         <%= search_form_for @q do |f| %>
             <%= f.label :period_eq, t('activerecord.attributes.substitute.period') %>
             <%= f.radio_button :period_eq, "", {:checked => true} %>指定なし

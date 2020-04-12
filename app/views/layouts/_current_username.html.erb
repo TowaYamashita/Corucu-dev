@@ -1,5 +1,7 @@
 <% if user_signed_in? %>
-    <div class="well">
-        <%= "現在ログインしているユーザ:" + current_user.username %>
+    <div class="card bg-info">
+        <div class="card-body">
+            <%= "現在ログインしているユーザ:" + current_user.username %>
+        </div>
     </div>
 <% end %>
