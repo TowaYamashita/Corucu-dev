@@ -36,10 +36,10 @@
                 <i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>
               <% end %>
             </td>
-            <td><%= link_to 'Show', add_examination, class: "btn btn-sm btn-info btn-block" %></td>
+            <td><%= link_to t('scaffold.show'), add_examination, class: "btn btn-sm btn-info btn-block" %></td>
             <% if user_signed_in? && ( current_user.id == add_examination.user_id || current_user.admin_user == true ) %>
-              <td><%= link_to 'Edit', edit_add_examination_path(add_examination), class: "btn btn-sm btn-success btn-block" %></td>
-              <td><%= link_to 'Destroy', add_examination, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger btn-block" %></td>
+              <td><%= link_to t('scaffold.edit'), edit_add_examination_path(add_examination), class: "btn btn-sm btn-success btn-block" %></td>
+              <td><%= link_to t('scaffold.destroy'), add_examination, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger btn-block" %></td>
             <% end %>
           </tr>
         <% end %>
@@ -51,5 +51,5 @@
 <br>
 
 <% if user_signed_in? %>
-  <%= link_to 'New Add Examination', new_add_examination_path, class: "btn btn-lg btn-success btn-block" %>
+  <%= link_to t('scaffold.new'), new_add_examination_path, class: "btn btn-lg btn-success btn-block" %>
 <% end%>

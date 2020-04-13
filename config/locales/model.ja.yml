@@ -221,3 +221,11 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  scaffold:
+    index: "一覧"
+    show: "詳細"
+    new: "新規作成"
+    edit: "編集"
+    create: "新規作成"
+    update: "更新"
+    destroy: "削除"
