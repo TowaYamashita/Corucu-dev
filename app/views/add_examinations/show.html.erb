@@ -1,37 +1,47 @@
-<p>
-  <strong>
-    <%= t('activerecord.attributes.add_examination.scheduled_at') %>
-  </strong>
-  <%= @add_examination.scheduled_at %>
-</p>
+<div class="card text-center border-info">
+  <div class="card-header text-white bg-info">
+    <h1>
+      <%= t('scaffold.show') %>
+    </h1>
+  </div>
+  <div class="card-body">
+    <p>
+      <strong>
+        <%= t('activerecord.attributes.add_examination.scheduled_at') %>
+      </strong>
+      <%= @add_examination.scheduled_at %>
+    </p>
 
-<p>
-  <strong>
-    <%= t('activerecord.attributes.add_examination.category') %>
-  </strong>
-  <%= @add_examination.category %>
-</p>
+    <p>
+      <strong>
+        <%= t('activerecord.attributes.add_examination.category') %>
+      </strong>
+      <%= @add_examination.category %>
+    </p>
 
-<p>
-  <strong>
-    <%= t('activerecord.attributes.subject.course') %>
-  </strong>
-  <%= @add_examination.subject.course %>
-</p>
+    <p>
+      <strong>
+        <%= t('activerecord.attributes.subject.course') %>
+      </strong>
+      <%= @add_examination.subject.course %>
+    </p>
 
-<p>
-  <strong>
-    <%= t('activerecord.attributes.add_examination.place') %>
-  </strong>
-  <%= @add_examination.place %>
-</p>
+    <p>
+      <strong>
+        <%= t('activerecord.attributes.add_examination.place') %>
+      </strong>
+      <%= @add_examination.place %>
+    </p>
 
-<p>
-  <strong>
-    <%= t('activerecord.attributes.add_examination.comment') %>
-  </strong>
-  <%= @add_examination.comment %>
-</p>
-
-<%= link_to 'Edit', edit_add_examination_path(@add_examination) %> |
-<%= link_to 'Back', add_examinations_path %>
+    <p>
+      <strong>
+        <%= t('activerecord.attributes.add_examination.comment') %>
+      </strong>
+      <%= @add_examination.comment %>
+    </p>
+  </div>
+  <div class="card-footer">
+    <%= link_to t('scaffold.edit'), edit_add_examination_path(@add_examination), class: "btn btn-success" %> |
+    <%= link_to t('scaffold.back'), add_examinations_path, class: "btn btn-default" %>  
+  </div>
+</div>

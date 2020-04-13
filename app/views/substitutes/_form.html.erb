@@ -27,7 +27,12 @@
     <%= form.collection_select :subject_id, Subject.all, :id, :course %>
   </div>
 
+  <div class="field">
+    <%= form.label :comment, t('activerecord.attributes.substitute.comment') %>
+    <%= form.text_area :comment %>
+  </div>
+
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit nil , :class => 'btn btn-primary' %>
   </div>
 <% end %>

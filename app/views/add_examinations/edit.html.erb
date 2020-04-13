@@ -1,7 +1,14 @@
-<h1>
-  <%= t('activerecord.models.add_examination') + "情報を編集" %>
-</h1>
-<%= render 'form', add_examination: @add_examination %>
-
-<%= link_to 'Show', @add_examination %> |
-<%= link_to 'Back', add_examinations_path %>
+<div class="card text-center border-success">
+  <div class="card-header text-white bg-success">
+    <h1>
+      <%= t('activerecord.models.add_examination') + "情報を編集" %>
+    </h1>
+  </div>
+  <div class="card-body">
+    <%= render 'form', add_examination: @add_examination %>
+  </div>
+  <div class="card-footer">
+    <%= link_to t('scaffold.show'), @add_examination, class: "btn btn-info" %> |
+    <%= link_to t('scaffold.back'), add_examinations_path, class: "btn btn-default" %>
+  </div>
+</div>

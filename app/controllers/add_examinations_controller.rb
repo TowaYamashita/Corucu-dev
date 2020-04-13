@@ -78,8 +78,8 @@ class AddExaminationsController < ApplicationController
 
     def ensure_correct_user
       @add_examination = AddExamination.find_by(id:params[:id])
-      if @add_examination.user_id != @current_user.id
-        flash[:notice] = "権限がありません"
+      if (@add_examination.user_id != @current_user.id) && @current_user.admin_user == false
+        flash[:alert] = "権限がありません"
         redirect_to add_examinations_path
       end
     end

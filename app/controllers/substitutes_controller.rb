@@ -79,8 +79,8 @@ class SubstitutesController < ApplicationController
 
     def ensure_correct_user
       @substitute = Substitute.find_by(id:params[:id])
-      if @substitute.user_id != @current_user.id
-        flash[:notice] = "権限がありません"
+      if if (@substitute.user_id != @current_user.id) && @current_user.admin_user == false
+        flash[:alert] = "権限がありません"
         redirect_to substitutes_path
       end
     end

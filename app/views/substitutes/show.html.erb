@@ -1,30 +1,41 @@
-<p>
-  <strong>
-    <%= t('activerecord.attributes.substitute.changed_at') %>
-  </strong>
-  <%= @substitute.changed_at %>
-</p>
+<div class="card text-center border-info">
+  <div class="card-header text-white bg-info">
+    <h1>
+      <%= t('scaffold.show') %>
+    </h1>
+  </div>
+  <div class="card-body">
+    <p>
+      <strong>
+        <%= t('activerecord.attributes.substitute.changed_at') %>
+      </strong>
+      <%= @substitute.changed_at %>
+    </p>
 
-<p>
-  <strong>
-    <%= t('activerecord.attributes.substitute.period') %>
-  </strong>
-  <%= @substitute.period %>
-</p>
+    <p>
+      <strong>
+        <%= t('activerecord.attributes.substitute.period') %>
+      </strong>
+      <%= @substitute.period %>
+    </p>
 
-<p>
-  <strong>
-    <%= t('activerecord.attributes.subject.course') %>
-  </strong>
-  <%= @substitute.subject.course %>
-</p>
+    <p>
+      <strong>
+        <%= t('activerecord.attributes.subject.course') %>
+      </strong>
+      <%= @substitute.subject.course %>
+    </p>
 
-<p>
-  <strong>
-    <%= t('activerecord.attributes.substitute.comment') %>
-  </strong>
-  <%= @substitute.comment %>
-</p>
+    <p>
+      <strong>
+        <%= t('activerecord.attributes.substitute.comment') %>
+      </strong>
+      <%= @substitute.comment %>
+    </p>
 
-<%= link_to 'Edit', edit_substitute_path(@substitute) %> |
-<%= link_to 'Back', substitutes_path %>
+  </div>
+  <div class="card-footer">
+    <%= link_to t('scaffold.edit'), edit_substitute_path(@substitute), class: "btn btn-success" %> |
+    <%= link_to t('scaffold.back'), substitutes_path, class: "btn btn-default" %>
+  </div>
+</div>
