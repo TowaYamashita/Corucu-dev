@@ -4,11 +4,18 @@
       <%= t('activerecord.models.substitutes') + "情報を編集" %>
     </h1>
   </div>
+
   <div class="card-body">
     <%= render 'form', substitute: @substitute %>
   </div>
+
   <div class="card-footer">
-    <%= link_to t('scaffold.show'), @substitute, class: "btn btn-info" %> |
-    <%= link_to t('scaffold.back'), substitutes_path, class: "btn btn-default" %>
+    <div class="container">
+      <div class="row">
+        <%= link_to t('scaffold.show'), @substitute, class: "btn btn-info col-sm-6" %> 
+        <%= link_to t('scaffold.back'), substitutes_path, class: "btn btn-outline-dark col-sm-6" %>
+      </div>
+    </div>
   </div>
+  
 </div>
