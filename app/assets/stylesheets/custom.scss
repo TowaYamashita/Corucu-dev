@@ -95,3 +95,12 @@ footer {
     }
   }
 }
+
+/*入力フォームの日付の記入欄を横並びに変更*/
+/*bootstrap既存の設定と干渉したので!importantを適用*/
+/*width: autoでうまく動作しないため親要素に対する割合を指定して対策*/
+/*!importantとwidth: 32%は解決策が見つかり次第リファクタする*/
+.bootstrap-date {
+  display: inline-block!important;
+  width: 32%!important;
+}
