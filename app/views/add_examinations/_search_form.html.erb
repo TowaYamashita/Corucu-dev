@@ -4,25 +4,56 @@
 	</div>
 
     <div class="card-body">
-        <%= search_form_for @q do |f| %>
-            <%= f.label :category_cont, t('activerecord.attributes.add_examination.category') %>
-            <%= f.radio_button :category_cont, "", {:checked => true} %>指定なし
-            <%= f.radio_button :category_cont, "追試" %>追試
-            <%= f.radio_button :category_cont, "再試" %>再試
-            <br>
+        <div class=container>
+            <form>
+                <%= search_form_for @q do |f| %>
+                    <fieldset class="form-group">
+                        <div class="row">
+                            <%= f.label :category_cont, t('activerecord.attributes.add_examination.category'), class: "col-sm-2 col-form-label" %>
+                            <div class="col-sm-10">
+                                <div class="form-check form-check-inline">
+                                    <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-secondary">
+                                                <%= f.radio_button :category_cont, "", {:checked => true, :class => 'form-check-input'} %>指定なし
+                                            </label>
+                                            <label class="btn btn-secondary">
+                                                <%= f.radio_button :category_cont, "追試", {:class => 'form-check-input'} %>追試
+                                            </label>
+                                            <label class="btn btn-secondary">
+                                                <%= f.radio_button :category_cont, "再試", {:class => 'form-check-input'} %>再試
+                                            </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    
+                    <br>
             
-            <%= f.label :subject_id_eq, t('activerecord.attributes.subject.course') %>
-            <%= f.collection_select :subject_id_eq, Subject.all, :id, :course, :include_blank => '指定なし' %>
-            
-            <br>
+                    <div class="form-group row">
+                        <%= f.label :subject_id_eq, t('activerecord.attributes.subject.course'), class: "col-sm-2 col-form-label" %>
+                        <div class="col-sm-10">
+                            <%= f.collection_select :subject_id_eq, Subject.all, :id, :course,
+                                                    {prompt: true}, {class: "form-control"} %>
+                        </div>
+                    </div>
+                
+                    <br>
+                
+                    <div class="form-group row">
+                        <%= f.label :scheduled_at, t('activerecord.attributes.add_examination.scheduled_at'), class: "col-sm-2 col-form-label" %>
+                        <div class="col-sm-10 form-inline">
+                            <%= f.date_field :scheduled_at_gteq, {:class => "form-control"} %>から
+                            <%= f.date_field :scheduled_at_lteq_end_of_day, {:class => "form-control"} %>までの期間
+                        </div>
+                    </div>
+                
+                    <br>
 
-            <%= f.label :scheduled_at, t('activerecord.attributes.add_examination.scheduled_at') %>
-            <%= f.date_field :scheduled_at_gteq %>~<%= f.date_field :scheduled_at_lteq_end_of_day %>
-
-            <br>
-
-            <%= f.submit nil , :class => 'btn btn-primary' %>
-        <% end %>
+                    <%= f.submit nil , :class => 'btn btn-primary btn-block' %>
+                <% end %>
+            </form>
+        </div>
     </div>
-
 </div>
+

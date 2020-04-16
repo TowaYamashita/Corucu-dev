@@ -4,29 +4,63 @@
 	</div>
 
     <div class="card-body">
-        <%= search_form_for @q do |f| %>
-            <%= f.label :period_eq, t('activerecord.attributes.substitute.period') %>
-            <%= f.radio_button :period_eq, "", {:checked => true} %>指定なし
-            <%= f.radio_button :period_eq, "1" %>1
-            <%= f.radio_button :period_eq, "2" %>2
-            <%= f.radio_button :period_eq, "3" %>3
-            <%= f.radio_button :period_eq, "4" %>4
+        <div class=container>
+            <form>
+                <%= search_form_for @q do |f| %>
+                    <fieldset class="form-group">
+                        <div class="row">
+                            <%= f.label :period_eq, t('activerecord.attributes.substitute.period'), class: "col-sm-2 col-form-label" %>
+                            <div class="col-sm-10">
+                                <div class="form-check form-check-inline">
+                                    <div class="btn-group" data-toggle="buttons">
+                                        <label class="btn btn-secondary">
+                                            <%= f.radio_button :period_eq, "", {:checked => true, :class => 'form-check-input'} %>指定なし
+                                        </label>
+                                        <label class="btn btn-secondary">    
+                                            <%= f.radio_button :period_eq, "1", {:class => 'form-check-input'} %>1
+                                        </label>
+                                        <label class="btn btn-secondary">
+                                            <%= f.radio_button :period_eq, "2", {:class => 'form-check-input'} %>2
+                                        </label>
+                                        <label class="btn btn-secondary">
+                                            <%= f.radio_button :period_eq, "3", {:class => 'form-check-input'} %>3
+                                        </label>
+                                        <label class="btn btn-secondary">
+                                            <%= f.radio_button :period_eq, "4", {:class => 'form-check-input'} %>4
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    
+                    <br>
+                    
+                    <div class="form-group row">
+                        <%= f.label :subject_id_eq, t('activerecord.attributes.subject.course'), class: "col-sm-2 col-form-label" %>
+                        <div class="col-sm-10">
+                            <%= f.collection_select :subject_id_eq, Subject.all, :id, :course,
+                                                    {prompt: true}, {class: "form-control"} %>
+                        </div>
+                    </div>
+                    
+                    <br>
+                    
+                    <div class="form-group row">
+                        <%= f.label :changed_at, t('activerecord.attributes.substitute.changed_at'), class: "col-sm-2 col-form-label" %>
+                        <div class="col-sm-10 form-inline">
+                            <%= f.date_field :changed_at_gteq, {:class => "form-control"} %>から
+                            <%= f.date_field :changed_at_lteq_end_of_day, {:class => "form-control"} %>までの期間
+                        </div>
+                    </div>
+                    
+                    <br>
+                    
+                    <%= f.submit nil , :class => 'btn btn-primary btn-block' %>
 
-            <br>
-
-            <%= f.label :subject_id_eq, t('activerecord.attributes.subject.course') %>
-            <%= f.collection_select :subject_id_eq, Subject.all, :id, :course, :include_blank => '指定なし' %>
-        
-            <br>
-
-            <%= f.label :changed_at, t('activerecord.attributes.substitute.changed_at') %>
-            <%= f.date_field :changed_at_gteq %>~<%= f.date_field :changed_at_lteq_end_of_day %>
-
-            <br>
-            
-            <%= f.submit nil , :class => 'btn btn-primary' %>
-
-        <% end %>   
+                <% end %>
+            </form>
+        </div>
     </div>
 
 </div>
