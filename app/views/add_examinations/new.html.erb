@@ -1,6 +1,13 @@
-<h1>
-  <%= t('activerecord.models.add_examination') + "情報の新規追加" %>
-</h1>
-<%= render 'form', add_examination: @add_examination %>
-
-<%= link_to 'Back', add_examinations_path %>
+<div class="card text-center">
+  <div class="card-header">
+    <h1>
+      <%= t('activerecord.models.add_examination') + "情報の新規追加" %>
+    </h1>
+  </div>
+  <div class="card-body">
+    <%= render 'form', add_examination: @add_examination %>
+  </div>
+  <div class="card-footer text-muted">
+    <%= link_to t('scaffold.back'), add_examinations_path, class: "btn btn-outline-dark btn-block" %>
+  </div>
+</div>
