@@ -36,11 +36,15 @@
                 <i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>
               <% end %>
             </td>
-            <td><%= link_to t('scaffold.show'), substitute, class: "btn btn-sm btn-info btn-block" %></td>
-            <% if user_signed_in? && ( substitute.user_id == current_user.id || current_user.admin_user == true ) %>
-              <td><%= link_to t('scaffold.edit'), edit_substitute_path(substitute), class: "btn btn-sm btn-success btn-block" %></td>
-              <td><%= link_to t('scaffold.destroy'), substitute, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger btn-block" %></td>
-            <% end %>
+            <td>
+              <div class="btn-group d-flex">
+                <%= link_to t('scaffold.show'), substitute, class: "btn btn-info w-100" %>
+                <% if user_signed_in? && ( substitute.user_id == current_user.id || current_user.admin_user == true ) %>
+                  <%= link_to t('scaffold.edit'), edit_substitute_path(substitute), class: "btn btn-success w-100" %>
+                  <%= link_to t('scaffold.destroy'), substitute, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger w-100" %>
+                <% end %>
+              </div>
+            </td>
           </tr>
         <% end %>
       </tbody>

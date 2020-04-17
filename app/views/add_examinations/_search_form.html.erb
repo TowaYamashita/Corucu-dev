@@ -9,8 +9,8 @@
                 <%= search_form_for @q do |f| %>
                     <fieldset class="form-group">
                         <div class="row">
-                            <%= f.label :category_cont, t('activerecord.attributes.add_examination.category'), class: "col-sm-2 col-form-label" %>
-                            <div class="col-sm-10">
+                            <%= f.label :category_cont, t('activerecord.attributes.add_examination.category'), class: "col-sm-3 col-form-label" %>
+                            <div class="col-sm-9">
                                 <div class="form-check form-check-inline">
                                     <div class="btn-group" data-toggle="buttons">
                                             <label class="btn btn-secondary">
@@ -31,8 +31,8 @@
                     <br>
             
                     <div class="form-group row">
-                        <%= f.label :subject_id_eq, t('activerecord.attributes.subject.course'), class: "col-sm-2 col-form-label" %>
-                        <div class="col-sm-10">
+                        <%= f.label :subject_id_eq, t('activerecord.attributes.subject.course'), class: "col-sm-3 col-form-label" %>
+                        <div class="col-sm-9">
                             <%= f.collection_select :subject_id_eq, Subject.all, :id, :course,
                                                     {prompt: true}, {class: "form-control"} %>
                         </div>
@@ -41,10 +41,10 @@
                     <br>
                 
                     <div class="form-group row">
-                        <%= f.label :scheduled_at, t('activerecord.attributes.add_examination.scheduled_at'), class: "col-sm-2 col-form-label" %>
-                        <div class="col-sm-10 form-inline">
+                        <%= f.label :scheduled_at, t('activerecord.attributes.add_examination.scheduled_at'), class: "col-sm-3 col-form-label" %>
+                        <div class="col-sm-9 form-inline">
                             <%= f.date_field :scheduled_at_gteq, {:class => "form-control"} %>から
-                            <%= f.date_field :scheduled_at_lteq_end_of_day, {:class => "form-control"} %>までの期間
+                            <%= f.date_field :scheduled_at_lteq_end_of_day, {:class => "form-control"} %>まで
                         </div>
                     </div>
                 

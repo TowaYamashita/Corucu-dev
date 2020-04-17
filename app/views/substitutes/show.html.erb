@@ -50,8 +50,12 @@
   <div class="card-footer">
     <div class="container">
       <div class="row">
-        <%= link_to t('scaffold.edit'), edit_substitute_path(@substitute), class: "btn btn-success col-sm-6" %>
-        <%= link_to t('scaffold.back'), substitutes_path, class: "btn btn-outline-dark col-sm-6" %>
+        <% if user_signed_in? && ( @substitute.user_id == current_user.id || current_user.admin_user == true ) %>
+          <%= link_to t('scaffold.edit'), edit_substitute_path(@substitute), class: "btn btn-success col-sm-6" %>
+          <%= link_to t('scaffold.back'), substitutes_path, class: "btn btn-outline-dark col-sm-6" %>
+        <% else %>
+          <%= link_to t('scaffold.back'), substitutes_path, class: "btn btn-outline-dark btn-block" %>
+        <% end %>
       </div>
     </div>
   </div>
