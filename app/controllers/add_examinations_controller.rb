@@ -8,7 +8,7 @@ class AddExaminationsController < ApplicationController
   def index
     @q = AddExamination.ransack(params[:q])
     # @add_examinations = AddExamination.all
-    @add_examinations = @q.result.includes(:subject)
+    @add_examinations = @q.result.includes(:subject).page(params[:page])
   end
 
   # GET /add_examinations/1

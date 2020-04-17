@@ -8,7 +8,7 @@ class SubstitutesController < ApplicationController
   def index
     @q = Substitute.ransack(params[:q])
     # @substitutes = Substitute.all
-    @substitutes = @q.result.includes(:subject)
+    @substitutes = @q.result.includes(:subject).page(params[:page])
     
   end
 
