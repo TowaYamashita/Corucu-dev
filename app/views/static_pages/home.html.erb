@@ -13,9 +13,10 @@
 <div class="jumbotron">
 
   <div>
-    <%= link_to "授業変更情報の確認", substitutes_path, class: "btn btn-lg btn-info btn-block" %>
-    <%= link_to "追試再試情報の確認", add_examinations_path, class: "btn btn-lg btn-info btn-block" %>
+    <%= link_to "授業変更情報の閲覧", substitutes_path, class: "btn btn-lg btn-info btn-block" %>
+    <%= link_to "追試再試情報の閲覧", add_examinations_path, class: "btn btn-lg btn-info btn-block" %>
     <% if user_signed_in? %>
+      <%= link_to "授業科目一覧", subjects_path, class: "btn btn-lg btn-info btn-block" %>
       <%= link_to "授業変更情報の追加", new_substitute_path, class: "btn btn-lg btn-success btn-block" %>
       <%= link_to "追試再試情報の追加", new_add_examination_path, class: "btn btn-lg btn-success btn-block" %>
     <% end %>
