@@ -4,6 +4,17 @@
   </h1>
 </div>
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <%= link_to "Home", root_path %>
+    </li>
+    <li class="breadcrumb-item active">
+      <%= link_to t('activerecord.models.subjects'), '#' %>
+    </li>
+  </ol>
+</nav>
+
 <div class="my-3">
   <div class="card border-info">
     <div class="card-header text-white bg-info">

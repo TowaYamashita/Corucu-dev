@@ -4,6 +4,17 @@
   </h1>
 </div>
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <%= link_to "Home", root_path %>
+    </li>
+    <li class="breadcrumb-item active">
+      <%= link_to t('activerecord.models.substitutes'), '#' %>
+    </li>
+  </ol>
+</nav>
+
 <%= render 'search_form' %>
 
 <div class="my-3">

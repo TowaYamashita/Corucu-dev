@@ -1,9 +1,9 @@
 ja:
   activerecord:
     models:
-      subject: "科目"
+      subjects: "科目"
       substitutes: "代講"
-      add_examination: "追試再試"
+      add_examinations: "追試再試"
     attributes:
       subject:
         course: "科目名"
