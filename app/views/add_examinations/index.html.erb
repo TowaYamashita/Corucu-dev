@@ -15,67 +15,110 @@
   </ol>
 </nav>
 
-<%= render 'search_form' %>
 
-<div class="my-3">
-  <div class="card border-success">
-    <div class="card-header text-white bg-success">
-		  検索結果
-	  </div>
-
-    <div class="card-body">
-      <table class="table table-bordered table-hover">
-        <thead>
-          <tr>
-            <th><%= sort_link(@q, :scheduled_at, t('activerecord.attributes.add_examination.scheduled_at'), default_order: :desc) %></th>
-            <th><%= t('activerecord.attributes.subject.course') %></th>
-            <th><%= t('activerecord.attributes.add_examination.place') %></th>
-            <th><%= t('activerecord.attributes.add_examination.comment') %></th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @add_examinations.each do |add_examination| %>
-            <tr>
-              <td><%= add_examination.scheduled_at %></td>
-              <td><%= add_examination.subject.course %></td>
-              <td><%= add_examination.place %></td>
-              <td>
-                <% if add_examination.comment.empty? %>
-                  <span class="fa-stack">
-                    <i class="fa fa-commenting-o fa-stack-2x fa-stack-1x"></i>
-                    <i class="fa fa-ban fa-stack-2x text-danger" style="color:red;"></i>
-                  </span>
-                <% else %>
-                  <i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>
-                <% end %>
-              </td>
-              <td>
-                <div class="btn-group d-flex">
-                  <%= link_to t('scaffold.show'), add_examination, class: "btn btn-info w-100" %>
-                  <% if user_signed_in? && ( current_user.id == add_examination.user_id || current_user.admin_user == true ) %>
-                    <%= link_to t('scaffold.edit'), edit_add_examination_path(add_examination), class: "btn btn-success w-100" %>
-                    <%= link_to t('scaffold.destroy'), add_examination, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger w-100" %>
-                  <% end %>
-                </div>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-    
-    <div class="card-footer">
-      <div class="container pagination justify-content-center" >
-        <%= paginate @add_examinations %>
+<div class="container">
+  <div class="row">
+    <%# 画面サイズが中以下の際に表示するタブ%>
+    <div class="col-12 d-lg-none">
+      <div class="mb-3">
+        <nav class="nav nav-tabs nav-justified">
+          <li class="nav-item">
+            <%= link_to t('activerecord.models.substitutes'), substitutes_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to t('activerecord.models.add_examinations'), add_examinations_path, class: "nav-link active" %>
+          </li>
+        </nav>
       </div>
     </div>
+
+    <%# 画面サイズが大以上の際に表示するサイドバー%>
+    <div class="col-2 d-none d-lg-block">
+      <div class="jumbotron">
+        <ul class="nav nav-pills nav-stacked">
+          <li class="nav-item">
+            <%= link_to "Home", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to t('activerecord.models.substitutes'), substitutes_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to t('activerecord.models.add_examinations'), add_examinations_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to t('activerecord.models.subjects'), subjects_path, class: "nav-link" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <%# サイドバーが表示されている時には幅を狭める%>
+    <div class="col-12 col-lg-10">
+      <%= render 'search_form' %>
+
+      <div class="my-3">
+        <div class="card border-success">
+          <div class="card-header text-white bg-success">
+		        検索結果
+	        </div>
+
+        <div class="card-body">
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th><%= sort_link(@q, :scheduled_at, t('activerecord.attributes.add_examination.scheduled_at'), default_order: :desc) %></th>
+                <th><%= t('activerecord.attributes.subject.course') %></th>
+                <th><%= t('activerecord.attributes.add_examination.place') %></th>
+                <th><%= t('activerecord.attributes.add_examination.comment') %></th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @add_examinations.each do |add_examination| %>
+                <tr>
+                  <td><%= add_examination.scheduled_at %></td>
+                  <td><%= add_examination.subject.course %></td>
+                  <td><%= add_examination.place %></td>
+                  <td>
+                    <% if add_examination.comment.empty? %>
+                      <span class="fa-stack">
+                        <i class="fa fa-commenting-o fa-stack-2x fa-stack-1x"></i>
+                        <i class="fa fa-ban fa-stack-2x text-danger" style="color:red;"></i>
+                      </span>
+                    <% else %>
+                      <i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>
+                    <% end %>
+                  </td>
+                  <td>
+                    <div class="btn-group d-flex">
+                      <%= link_to t('scaffold.show'), add_examination, class: "btn btn-info w-100" %>
+                      <% if user_signed_in? && ( current_user.id == add_examination.user_id || current_user.admin_user == true ) %>
+                        <%= link_to t('scaffold.edit'), edit_add_examination_path(add_examination), class: "btn btn-success w-100" %>
+                        <%= link_to t('scaffold.destroy'), add_examination, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger w-100" %>
+                      <% end %>
+                    </div>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+    
+        <div class="card-footer">
+          <div class="container pagination justify-content-center" >
+            <%= paginate @add_examinations %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <% if user_signed_in? %>
+      <%= link_to t('scaffold.new'), new_add_examination_path, class: "btn btn-lg btn-success btn-block" %>
+    <% end %>
   </div>
 </div>
 
-<br>
 
-<% if user_signed_in? %>
-  <%= link_to t('scaffold.new'), new_add_examination_path, class: "btn btn-lg btn-success btn-block" %>
-<% end%>
