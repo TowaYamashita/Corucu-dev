@@ -1,11 +1,11 @@
 class SubjectsController < ApplicationController
-  before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
 
   # GET /subjects
   # GET /subjects.json
   def index
-    @subjects = Subject.all
+    @subjects = Subject.all.page(params[:page])
   end
 
   # GET /subjects/1
@@ -72,4 +72,5 @@ class SubjectsController < ApplicationController
     def subject_params
       params.require(:subject).permit(:course, :instructor)
     end
+
 end
