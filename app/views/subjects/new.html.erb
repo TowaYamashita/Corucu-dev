@@ -1,13 +1,17 @@
-<div class="card text-center">
-  <div class="card-header">
-    <h1>
-      教科の追加
-    </h1>
-  </div>
-  <div class="card-body">
-    <%= render 'form', subject: @subject %>
-  </div>
-  <div class="card-footer text-muted">
-    <%= link_to t('scaffold.back'), subjects_path, class: "btn btn-outline-dark btn-block" %>
+<div class="my-3">
+  <div class="card text-center">
+    <div class="card-header">
+      <h1>
+        教科の追加
+      </h1>
+    </div>
+  
+    <div class="card-body">
+      <%= render 'form', subject: @subject %>
+    </div>
+    
+    <div class="card-footer text-muted">
+      <%= link_to t('scaffold.back'), subjects_path, class: "btn btn-outline-dark btn-block" %>
+    </div>
   </div>
 </div>

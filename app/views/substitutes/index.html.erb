@@ -1,58 +1,64 @@
-<h1>
-  <%= t('activerecord.models.substitutes') + "情報の一覧" %>
-</h1>
+<div class="my-3">
+  <h1>
+    <%= t('activerecord.models.substitutes') + "情報の一覧" %>
+  </h1>
+</div>
 
 <%= render 'search_form' %>
 
-<div class="card border-success">
-  <div class="card-header text-white bg-success">
-		検索結果
-	</div>
-  <div class="card-body">
-    <table class="table table-bordered table-hover">
-      <thead>
-        <tr>
-          <th><%= sort_link(@q, :changed_at, t('activerecord.attributes.substitute.changed_at'), default_order: :desc) %></th>
-          <th><%= t('activerecord.attributes.substitute.period') %></th>
-          <th><%= t('activerecord.attributes.subject.course') %></th>
-          <th><%= t('activerecord.attributes.substitute.comment') %></th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
+<div class="my-3">
+  <div class="card border-success">
+    <div class="card-header text-white bg-success">
+		  検索結果
+	  </div>
 
-      <tbody>
-        <% @substitutes.each do |substitute| %>
+    <div class="card-body">
+      <table class="table table-bordered table-hover">
+        <thead>
           <tr>
-            <td><%= substitute.changed_at %></td>
-            <td><%= substitute.period %></td>
-            <td><%= substitute.subject.course %></td>
-            <td>
-              <% if substitute.comment.empty? %>
-                <span class="fa-stack">
-                  <i class="fa fa-commenting-o fa-stack-2x fa-stack-1x"></i>
-                  <i class="fa fa-ban fa-stack-2x text-danger" style="color:red;"></i>
-                </span>
-              <% else %>
-                <i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>
-              <% end %>
-            </td>
-            <td>
-              <div class="btn-group d-flex">
-                <%= link_to t('scaffold.show'), substitute, class: "btn btn-info w-100" %>
-                <% if user_signed_in? && ( substitute.user_id == current_user.id || current_user.admin_user == true ) %>
-                  <%= link_to t('scaffold.edit'), edit_substitute_path(substitute), class: "btn btn-success w-100" %>
-                  <%= link_to t('scaffold.destroy'), substitute, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger w-100" %>
-                <% end %>
-              </div>
-            </td>
+            <th><%= sort_link(@q, :changed_at, t('activerecord.attributes.substitute.changed_at'), default_order: :desc) %></th>
+            <th><%= t('activerecord.attributes.substitute.period') %></th>
+            <th><%= t('activerecord.attributes.subject.course') %></th>
+            <th><%= t('activerecord.attributes.substitute.comment') %></th>
+            <th colspan="3"></th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-  <div class="card-footer">
-    <div class="container pagination justify-content-center" >
-      <%= paginate @substitutes %>
+        </thead>
+
+        <tbody>
+          <% @substitutes.each do |substitute| %>
+            <tr>
+              <td><%= substitute.changed_at %></td>
+              <td><%= substitute.period %></td>
+              <td><%= substitute.subject.course %></td>
+              <td>
+                <% if substitute.comment.empty? %>
+                  <span class="fa-stack">
+                    <i class="fa fa-commenting-o fa-stack-2x fa-stack-1x"></i>
+                    <i class="fa fa-ban fa-stack-2x text-danger" style="color:red;"></i>
+                  </span>
+                <% else %>
+                  <i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>
+                <% end %>
+              </td>
+              <td>
+                <div class="btn-group d-flex">
+                  <%= link_to t('scaffold.show'), substitute, class: "btn btn-info w-100" %>
+                  <% if user_signed_in? && ( substitute.user_id == current_user.id || current_user.admin_user == true ) %>
+                    <%= link_to t('scaffold.edit'), edit_substitute_path(substitute), class: "btn btn-success w-100" %>
+                    <%= link_to t('scaffold.destroy'), substitute, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger w-100" %>
+                  <% end %>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="card-footer">
+      <div class="container pagination justify-content-center" >
+        <%= paginate @substitutes %>
+      </div>
     </div>
   </div>
 </div>

@@ -1,17 +1,16 @@
-<div class="center jumbotron">
-
-  <h1>
-    Welcome to Corucu!
-  </h1>
-  <p>
-    代講や追試の情報が一目で丸わかり！
-  </p>
-  <%= link_to "Corucuについて", about_path, class: "btn btn-lg btn-primary" %>
-
+<div class="mt-4">
+  <div class="center jumbotron">
+    <h1>
+      Welcome to Corucu!
+    </h1>
+    <p>
+      代講や追試の情報が一目で丸わかり！
+    </p>
+    <%= link_to "Corucuについて", about_path, class: "btn btn-lg btn-outline-primary" %>
+  </div>
 </div>
 
 <div class="jumbotron">
-
   <div>
     <%= link_to "授業変更情報の閲覧", substitutes_path, class: "btn btn-lg btn-info btn-block" %>
     <%= link_to "追試再試情報の閲覧", add_examinations_path, class: "btn btn-lg btn-info btn-block" %>
@@ -21,5 +20,4 @@
       <%= link_to "追試再試情報の追加", new_add_examination_path, class: "btn btn-lg btn-success btn-block" %>
     <% end %>
   </div>
-
 </div>

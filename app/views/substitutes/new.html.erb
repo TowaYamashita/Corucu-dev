@@ -1,13 +1,17 @@
-<div class="card text-center">
-  <div class="card-header">
-    <h1>
-      <%= t('activerecord.models.substitutes') + "情報の新規追加" %>
-    </h1>
-  </div>
-  <div class="card-body">
-    <%= render 'form', substitute: @substitute %>
-  </div>
-  <div class="card-footer text-muted">
-    <%= link_to t('scaffold.back'), substitutes_path, class: "btn btn-outline-dark btn-block" %>
+<div class="my-3">
+  <div class="card text-center">
+    <div class="card-header">
+      <h1>
+        <%= t('activerecord.models.substitutes') + "情報の新規追加" %>
+      </h1>
+    </div>
+    
+    <div class="card-body">
+      <%= render 'form', substitute: @substitute %>
+    </div>
+    
+    <div class="card-footer text-muted">
+      <%= link_to t('scaffold.back'), substitutes_path, class: "btn btn-outline-dark btn-block" %>
+    </div>
   </div>
 </div>
