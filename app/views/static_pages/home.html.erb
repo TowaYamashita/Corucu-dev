@@ -11,13 +11,92 @@
 </div>
 
 <div class="jumbotron">
-  <div>
-    <%= link_to "授業変更情報の閲覧", substitutes_path, class: "btn btn-lg btn-info btn-block" %>
-    <%= link_to "追試再試情報の閲覧", add_examinations_path, class: "btn btn-lg btn-info btn-block" %>
-    <% if user_signed_in? %>
-      <%= link_to "授業科目一覧", subjects_path, class: "btn btn-lg btn-info btn-block" %>
-      <%= link_to "授業変更情報の追加", new_substitute_path, class: "btn btn-lg btn-success btn-block" %>
-      <%= link_to "追試再試情報の追加", new_add_examination_path, class: "btn btn-lg btn-success btn-block" %>
-    <% end %>
+  <div class="container">
+    <div class="row no-gutters">
+      <div class="col-12">
+        <h3>
+          学生向け
+        </h3>
+      </div>
+      <div class="col-xs-12 col-lg-6">
+        <div class="card border-dark text-center">
+          <div class="card-body">
+            <h5 class="card-title">
+              代講情報の閲覧
+            </h5>
+            <p class="card-text">
+              授業変更についての情報について知りたいならこちら
+            </p>
+            <%= link_to "授業変更情報の閲覧", substitutes_path, class: "btn btn-lg btn-info stretched-link" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-lg-6">
+        <div class="card border-dark text-center">
+          <div class="card-body">
+            <h5 class="card-title">
+              追試再試情報の閲覧
+            </h5>
+            <p class="card-text">
+              追試及び再試についての情報について知りたいならこちら
+            </p>
+            <%= link_to "追試再試情報の閲覧", add_examinations_path, class: "btn btn-lg btn-info stretched-link" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <br>
+  
+  <div class="container">
+    <div class="row no-gutters">
+      <% if user_signed_in? %>
+        <div class="col-12">
+          <h3>
+            教授陣および学生を除く学内関係者向け
+          </h3>
+        </div>
+        <div class="col-xs-12 col-lg-6">
+          <div class="card border-dark text-center">
+            <div class="card-body">
+              <h5 class="card-title">
+                代講情報の追加
+              </h5>
+              <p class="card-text">
+                授業変更についての情報を追加するならこちら
+              </p>
+              <%= link_to "授業変更情報の追加", new_substitute_path, class: "btn btn-lg btn-success stretched-link" %>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-lg-6">
+          <div class="card border-dark text-center">
+            <div class="card-body">
+              <h5 class="card-title">
+                追試再試情報の追加
+              </h5>
+              <p class="card-text">
+                追試及び再試についての情報を追加するならこちら
+              </p>
+              <%= link_to "追試再試情報の追加", new_add_examination_path, class: "btn btn-lg btn-success stretched-link" %>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card border-dark text-center">
+            <div class="card-body">
+              <h5 class="card-title">
+                授業科目一覧
+              </h5>
+              <p class="card-text">
+                授業科目の一覧について知りたいならこちら
+              </p>
+              <%= link_to "授業科目一覧", subjects_path, class: "btn btn-lg btn-info stretched-link" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
