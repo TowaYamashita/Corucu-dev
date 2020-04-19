@@ -45,9 +45,11 @@
           <li class="nav-item">
             <%= link_to t('activerecord.models.add_examinations'), add_examinations_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
-            <%= link_to t('activerecord.models.subjects'), subjects_path, class: "nav-link" %>
-          </li>
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to t('activerecord.models.subjects'), subjects_path, class: "nav-link" %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>
