@@ -104,3 +104,17 @@ footer {
   display: inline-block!important;
   width: 32%!important;
 }
+
+/*トップページのjumbotronの枠線を追加*/
+.border-jumbotron {
+  border: 10px double #425d74;
+}
+
+/*トップページの背景画像を設定*/
+/*背景のみ透過させ、文字が目立つようにする"/
+/*2行目の!importantはjumbotronと競合したため必要*/
+.jumbotron-colk {
+  background-image: url("colk0.jpg");
+  background-color:rgba(white,0.5)!important;
+  background-blend-mode:lighten;
+}
