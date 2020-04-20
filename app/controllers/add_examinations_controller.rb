@@ -73,7 +73,7 @@ class AddExaminationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def add_examination_params
-      params.require(:add_examination).permit(:category, :subject_id, :place, :comment)
+      params.require(:add_examination).permit(:scheduled_at, :category, :subject_id, :place, :comment)
     end
 
     def ensure_correct_user
