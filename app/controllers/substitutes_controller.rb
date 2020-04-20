@@ -30,7 +30,7 @@ class SubstitutesController < ApplicationController
   # POST /substitutes.json
   def create
     @substitute = @current_user.substitutes.build(substitute_params)
-
+    
     respond_to do |format|
       if @substitute.save
         format.html { redirect_to @substitute, notice: 'Substitute was successfully created.' }
@@ -74,7 +74,7 @@ class SubstitutesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def substitute_params
-      params.require(:substitute).permit(:changed_at, :period, :subject_id, :user_id)
+      params.require(:substitute).permit(:changed_at, :period, :subject_id, :comment)
     end
 
     def ensure_correct_user

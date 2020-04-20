@@ -1,5 +1,4 @@
 <div class="container">
-<form>
   <%= form_with(model: substitute, local: true) do |form| %>
     <% if substitute.errors.any? %>
       <div id="error_explanation">
@@ -12,51 +11,49 @@
       </div>
     <% end %>
 
-  <div class="form-group row">
-    <%= form.label :changed_at, t('activerecord.attributes.substitute.changed_at'), class: "col-sm-2 col-form-label" %>
-    <div class="col-sm-10">
-      <%= form.date_select :changed_at, {}, {:class => "form-control bootstrap-date"} %>
+    <div class="form-group row">
+      <%= form.label :changed_at, t('activerecord.attributes.substitute.changed_at'), class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.date_select :changed_at, {}, {:class => "form-control bootstrap-date"} %>
+      </div>
     </div>
-  </div>
 
-  <div class="form-group row">
-    <div class="col-sm-2">
-      <%= form.label :period, t('activerecord.attributes.substitute.period'), class: "col-form-label" %>
+    <div class="form-group row">
+      <div class="col-sm-2">
+        <%= form.label :period, t('activerecord.attributes.substitute.period'), class: "col-form-label" %>
+      </div>
+      <div class="col-sm-10 btn-group" data-toggle="buttons">
+        <label class="btn btn-outline-secondary" style="width:25%">
+          <%= form.radio_button :period, 1 %> 1
+        </label>
+        <label class="btn btn-outline-secondary" style="width:25%">
+          <%= form.radio_button :period, 2 %> 2
+        </label>
+        <label class="btn btn-outline-secondary" style="width:25%">
+          <%= form.radio_button :period, 3 %> 3
+        </label>
+        <label class="btn btn-outline-secondary" style="width:25%">
+          <%= form.radio_button :period, 4 %> 4
+        </label>
+      </div>
     </div>
-    <div class="col-sm-10 btn-group" data-toggle="buttons">
-      <label class="btn btn-outline-secondary" style="width:25%">
-        <%= form.radio_button :period, 1 %> 1
-      </label>
-      <label class="btn btn-outline-secondary" style="width:25%">
-        <%= form.radio_button :period, 2 %> 2
-      </label>
-      <label class="btn btn-outline-secondary" style="width:25%">
-        <%= form.radio_button :period, 3 %> 3
-      </label>
-      <label class="btn btn-outline-secondary" style="width:25%">
-        <%= form.radio_button :period, 4 %> 4
-      </label>
-    </div>
-  </div>
 
-  <div class="form-group row">
-    <%= form.label :subject_id, t('activerecord.attributes.subject.course'), class: "col-sm-2 col-form-label" %>
-    <div class="col-sm-10">
-      <%= form.collection_select :subject_id, Subject.all, :id, :course, {}, {:class => "form-control"} %>
+    <div class="form-group row">
+      <%= form.label :subject_id, t('activerecord.attributes.subject.course'), class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.collection_select :subject_id, Subject.all, :id, :course, {}, {:class => "form-control"} %>
+      </div>
     </div>
-  </div>
 
-  <div class="form-group row">
-    <%= form.label :comment, t('activerecord.attributes.substitute.comment'), class: "col-sm-2 col-form-label" %>
-    <div class="col-sm-10">
-      <%= form.text_area :comment, class: "form-control" %>
+    <div class="form-group row">
+      <%= form.label :comment, t('activerecord.attributes.substitute.comment'), class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_area :comment, class: "form-control" %>
+      </div>
     </div>
-  </div>
 
-  <div class="action">
-    <%= form.submit nil , :class => 'btn btn-primary btn-block' %>
-  </div>
+    <div class="form-group row">
+      <%= form.submit class: "btn btn-primary btn-block" %>
+    </div>
   <% end %>
-
-</form>
 </div>
