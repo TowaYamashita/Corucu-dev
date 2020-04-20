@@ -33,7 +33,7 @@ class SubstitutesController < ApplicationController
     
     respond_to do |format|
       if @substitute.save
-        format.html { redirect_to @substitute, notice: 'Substitute was successfully created.' }
+        format.html { redirect_to @substitute, notice: '正常に作成されました' }
         format.json { render :show, status: :created, location: @substitute }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class SubstitutesController < ApplicationController
   def update
     respond_to do |format|
       if @substitute.update(substitute_params)
-        format.html { redirect_to @substitute, notice: 'Substitute was successfully updated.' }
+        format.html { redirect_to @substitute, notice: '正常に更新されました' }
         format.json { render :show, status: :ok, location: @substitute }
       else
         format.html { render :edit }
@@ -61,7 +61,7 @@ class SubstitutesController < ApplicationController
   def destroy
     @substitute.destroy
     respond_to do |format|
-      format.html { redirect_to substitutes_url, notice: 'Substitute was successfully destroyed.' }
+      format.html { redirect_to substitutes_url, notice: '正常に削除されました' }
       format.json { head :no_content }
     end
   end

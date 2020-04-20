@@ -32,7 +32,7 @@ class AddExaminationsController < ApplicationController
 
     respond_to do |format|
       if @add_examination.save
-        format.html { redirect_to @add_examination, notice: 'Add examination was successfully created.' }
+        format.html { redirect_to @add_examination, notice: '正常に作成できました' }
         format.json { render :show, status: :created, location: @add_examination }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class AddExaminationsController < ApplicationController
   def update
     respond_to do |format|
       if @add_examination.update(add_examination_params)
-        format.html { redirect_to @add_examination, notice: 'Add examination was successfully updated.' }
+        format.html { redirect_to @add_examination, notice: '正常に更新されました' }
         format.json { render :show, status: :ok, location: @add_examination }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class AddExaminationsController < ApplicationController
   def destroy
     @add_examination.destroy
     respond_to do |format|
-      format.html { redirect_to add_examinations_url, notice: 'Add examination was successfully destroyed.' }
+      format.html { redirect_to add_examinations_url, notice: '正常に削除されました' }
       format.json { head :no_content }
     end
   end
