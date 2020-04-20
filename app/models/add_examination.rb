@@ -2,7 +2,7 @@ class AddExamination < ApplicationRecord
   belongs_to :subject
   belongs_to :user
 
-  validates :category, presence: true
+  validates :category, presence: true,
                        inclusion: { in: %w(追試 再試) }
   validates :place, presence: true
   validates :scheduled_at, presence: true
