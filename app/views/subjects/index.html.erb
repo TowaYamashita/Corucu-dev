@@ -4,57 +4,63 @@
   </h1>
 </div>
 
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item">
-      <%= link_to "Home", root_path %>
-    </li>
-    <li class="breadcrumb-item active">
-      <%= link_to t('activerecord.models.subjects'), '#' %>
-    </li>
-  </ol>
-</nav>
+<div class="pc-width">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <%= link_to "Home", root_path %>
+      </li>
+      <li class="breadcrumb-item active">
+        <%= link_to t('activerecord.models.subjects'), '#' %>
+      </li>
+    </ol>
+  </nav>
 
-<div class="my-3">
-  <div class="card border-info">
-    <div class="card-header text-white bg-info">
-		  検索結果
-	  </div>
-    <div class="card-body">
-      <table class="table table-bordered table-hover">
-        <thead>
-          <tr>
-            <th><%= t('activerecord.attributes.subject.course') %></th>
-            <th><%= t('activerecord.attributes.subject.instructor') %></th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
+  <div class="row">
+    <div class="col-12">
+      <div class="my-3">
+        <div class="card border-info">
+          <div class="card-header text-white bg-info">
+		        検索結果
+	        </div>
+          <div class="card-body">
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th><%= t('activerecord.attributes.subject.course') %></th>
+                  <th><%= t('activerecord.attributes.subject.instructor') %></th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
 
-        <tbody>
-          <% @subjects.each do |subject| %>
-            <tr>
-              <td><%= subject.course %></td>
-              <td><%= subject.instructor %></td>
-              <td>
-                <div class="btn-group d-flex">
-                  <%= link_to t('scaffold.show'), subject, class: "btn btn-info w-100" %>
-                  <%= link_to t('scaffold.edit'), edit_subject_path(subject), class: "btn btn-success w-100" %>
-                  <%= link_to t('scaffold.destroy'), subject, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger w-100" %>
-                </div>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-    <div class="card-footer">
-      <div class="container pagination justify-content-center" >
-        <%= paginate @subjects %>
+              <tbody>
+                <% @subjects.each do |subject| %>
+                  <tr>
+                    <td><%= subject.course %></td>
+                    <td><%= subject.instructor %></td>
+                    <td>
+                      <div class="btn-group d-flex">
+                        <%= link_to t('scaffold.show'), subject, class: "btn btn-info w-100" %>
+                        <%= link_to t('scaffold.edit'), edit_subject_path(subject), class: "btn btn-success w-100" %>
+                        <%= link_to t('scaffold.destroy'), subject, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger w-100" %>
+                      </div>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer">
+            <div class="container pagination justify-content-center" >
+              <%= paginate @subjects %>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <br>
+
+      <%= link_to t('scaffold.new'), new_subject_path, class: "btn btn-lg btn-success btn-block" %>
     </div>
   </div>
 </div>
-
-<br>
-
-<%= link_to t('scaffold.new'), new_subject_path, class: "btn btn-lg btn-success btn-block" %>

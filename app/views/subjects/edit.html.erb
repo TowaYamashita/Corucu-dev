@@ -1,20 +1,22 @@
-<div class="my-3">
-  <div class="card text-center border-success">
-    <div class="card-header text-white bg-success">
-      <h1>
-        教科情報の編集
-      </h1>
-    </div>
+<div class="pc-width">
+  <div class="my-3">
+    <div class="card text-center border-success">
+      <div class="card-header text-white bg-success">
+        <h1>
+          教科情報の編集
+        </h1>
+      </div>
 
-    <div class="card-body">
-      <%= render 'form', subject: @subject %>
-    </div>
+      <div class="card-body">
+        <%= render 'form', subject: @subject %>
+      </div>
 
-    <div class="card-footer">
-      <div class="container">
-        <div class="row">
-          <%= link_to t('scaffold.show'), @subject, class: "btn btn-info col-sm-6" %> 
-          <%= link_to t('scaffold.back'), subjects_path, class: "btn btn-outline-dark col-sm-6" %>
+      <div class="card-footer">
+        <div class="container">
+          <div class="row">
+            <%= link_to t('scaffold.show'), @subject, class: "btn btn-info col-sm-6" %> 
+            <%= link_to t('scaffold.back'), subjects_path, class: "btn btn-outline-dark col-sm-6" %>
+          </div>
         </div>
       </div>
     </div>

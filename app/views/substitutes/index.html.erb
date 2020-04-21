@@ -4,7 +4,7 @@
   </h1>
 </div>
 
-<div class="my-3">
+<div class="pc-width">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
@@ -15,9 +15,7 @@
       </li>
     </ol>
   </nav>
-</div>
 
-<div class="container">
   <div class="row">
     <%# 画面サイズが中以下の際に表示するタブ%>
     <div class="col-12 d-lg-none">
@@ -57,8 +55,15 @@
 
     <%# サイドバーが表示されている時には幅を狭める%>
     <div class="col-12 col-lg-10">
+      
       <%= render 'search_form' %>
       
+      <br>
+      
+      <% if user_signed_in? %>
+        <%= link_to t('scaffold.new'), new_substitute_path, class: "btn btn-lg btn-success btn-block" %>
+      <% end %>
+
       <div class="my-3">
         <div class="card border-success">
           <div class="card-header text-white bg-success">
@@ -115,11 +120,5 @@
         </div>
       </div>
     </div>
-  
-    <br>
-
-    <% if user_signed_in? %>
-      <%= link_to t('scaffold.new'), new_substitute_path, class: "btn btn-lg btn-success btn-block" %>
-    <% end %>
   </div>
 </div>

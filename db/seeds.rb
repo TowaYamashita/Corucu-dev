@@ -47,9 +47,7 @@ Substitute.create([
     {:changed_at => "2020-04-12", :period => 4, :subject_id => 2, :user_id => 1, :comment => ""},
     {:changed_at => "2020-04-13", :period => 2, :subject_id => 1, :user_id => 2, :comment => "課題提出を忘れないように"},
     {:changed_at => "2020-04-14", :period => 1, :subject_id => 3, :user_id => 1, :comment => ""},
-    {:changed_at => "2020-04-15", :period => 3, :subject_id => 1, :user_id => 2, :comment => "試験返却予定"},
-    {:changed_at => "2020-04-21", :period => 2, :subject_id => 1, :user_id => 6, :comment => "ゲストユーザ表示テスト1"},
-    {:changed_at => "2020-04-22", :period => 1, :subject_id => 1, :user_id => 6, :comment => "ゲストユーザ表示テスト2"}
+    {:changed_at => "2020-04-15", :period => 3, :subject_id => 1, :user_id => 2, :comment => "試験返却予定"}
 ])
 
 # AddExaminations
@@ -66,7 +64,5 @@ AddExamination.create([
     {:scheduled_at => "2020-04-12", :category => "再試", :subject_id => 1, :user_id => 1, :place => "ict-1", :comment => "test6"},
     {:scheduled_at => "2020-04-13", :category => "追試", :subject_id => 4, :user_id => 2, :place => "library", :comment => ""},
     {:scheduled_at => "2020-04-14", :category => "再試", :subject_id => 3, :user_id => 1, :place => "labo-A", :comment => "test7"},
-    {:scheduled_at => "2020-04-15", :category => "追試", :subject_id => 5, :user_id => 2, :place => "labo-B", :comment => ""},
-    {:scheduled_at => "2020-04-21", :category => "追試", :subject_id => 2, :user_id => 6, :place => "ict1", :comment => "ゲストユーザ表示テストA"},
-    {:scheduled_at => "2020-04-22", :category => "再試", :subject_id => 3, :user_id => 6, :place => "labo-A", :comment => "ゲストユーザ表示テストB"}
+    {:scheduled_at => "2020-04-15", :category => "追試", :subject_id => 5, :user_id => 2, :place => "labo-B", :comment => ""}
 ])
