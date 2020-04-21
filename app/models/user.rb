@@ -7,4 +7,12 @@ class User < ApplicationRecord
   has_many :substitutes, dependent: :destroy
   has_many :add_examinations, dependent: :destroy
   
+  def self.guest
+    find_or_create_by!(email: 'guest-browse@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.username = "ゲストユーザ(閲覧用)"
+      user.status_id = 4
+      user.confirmed_at = Time.now
+    end
+  end
 end

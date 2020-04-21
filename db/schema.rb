@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_19_071828) do
+ActiveRecord::Schema.define(version: 11) do
 
   create_table "add_examinations", force: :cascade do |t|
     t.string "category"
@@ -49,12 +49,6 @@ ActiveRecord::Schema.define(version: 2020_04_19_071828) do
     t.text "comment"
     t.index ["subject_id"], name: "index_substitutes_on_subject_id"
     t.index ["user_id"], name: "index_substitutes_on_user_id"
-  end
-
-  create_table "tests", force: :cascade do |t|
-    t.integer "hint"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

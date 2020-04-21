@@ -3,8 +3,14 @@ Rails.application.routes.draw do
   resources :substitutes
   resources :subjects
   devise_for :users, controllers: {
-    confirmations: 'confirmations'
+    confirmations: 'users/confirmations',
+    registrations: 'users/registrations',
+    passwords: 'users/passwords'
   }
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+  end
+
   root 'static_pages#home'
   
   get '/help', to:'static_pages#help'

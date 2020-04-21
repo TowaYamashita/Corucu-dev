@@ -8,6 +8,9 @@
         代講や追試の情報が一目で丸わかり！
       </p>
       <%= link_to "Corucuについて", about_path, class: "btn btn-lg btn-outline-primary" %>
+      <% if !user_signed_in? %>
+        <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "btn btn-lg btn-outline-primary" %>
+      <% end %>
     </div>
   </div>
 </div>
