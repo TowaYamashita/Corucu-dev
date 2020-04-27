@@ -1,4 +1,4 @@
-<% provide(:title, "About") %>
+<% provide(:title, "Corucuについて") %>
 <div class="row">
   <div class="col-10 mx-auto my-5" style="background-color: white;">
     <div>
@@ -36,8 +36,7 @@
       <p>授業科目についての情報の閲覧</p>
     
       <h3>3.お問合せ先</h3>
-      <p>メールアドレス / corucu-official(at)gmail.com</p>
-      <p>メールを送られる際にはatを@に置き換えてください。</p>
+      <%= link_to '問い合わせフォームに遷移します',contacts_new_path , class: "btn btn-outline-secondary" %>
       <h3 style="text-align: right;">
         以上
       </h3>
