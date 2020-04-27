@@ -4,4 +4,4 @@ class ContactMailer < ApplicationMailer
     @contact = contact  
     mail to: ENV['MAIL'], subject: "メールのタイトル"
   end
-en
+end
