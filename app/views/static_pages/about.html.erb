@@ -1,6 +1,6 @@
 <% provide(:title, "Corucuについて") %>
 <div class="row">
-  <div class="col-10 mx-auto my-5" style="background-color: white;">
+  <div class="col-10 mx-auto my-5 p-5" style="background-color: white;">
     <div>
       <p style="text-align: right;">
         令和2年4月26日
@@ -36,7 +36,9 @@
       <p>授業科目についての情報の閲覧</p>
     
       <h3>3.お問合せ先</h3>
-      <%= link_to '問い合わせフォームに遷移します',contacts_new_path , class: "btn btn-outline-secondary" %>
+      <center>
+        <%= link_to '問い合わせフォームに遷移します',contacts_new_path , class: "btn btn-outline-secondary" %>
+      </center>
       <h3 style="text-align: right;">
         以上
       </h3>
