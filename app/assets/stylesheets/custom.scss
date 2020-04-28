@@ -108,7 +108,7 @@ footer {
 /*トップページのjumbotronの枠線を追加*/
 .border-main {
   border: 10px double #425d74;
-  background-color: #dbccbf;
+  background-color: whitesmoke;
 }
 
 /*背景画像の設定*/
@@ -128,7 +128,11 @@ footer {
 
 .jumbotron-original {
   text-align: center;
-  background-color: white;
+  background-color: whitesmoke;
   padding: 30px 0px;
   margin-bottom: 30px;
+}
+
+.border-dark {
+  border: 3px solid black!important;
 }

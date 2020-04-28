@@ -1,9 +1,9 @@
 <div class="jumbotron-original">
   <h1>
-    Welcome to Corucu!
+    [Excuse]<br>This is Demo-site!
   </h1>
   <p>
-    代講や追試の情報が一目で丸わかり！
+    このサイトは、Railsの勉強の過程で制作したものです。<br>また、本サイトのデータはすべてダミーです。
   </p>
   <%= link_to "Corucuについて", about_path, class: "btn btn-lg btn-outline-primary" %>
   <% if !user_signed_in? %>
@@ -20,7 +20,7 @@
         学生向け
       </h3>
     </div>
-    <div class="col-xs-10 col-lg-6 mx-auto">
+    <div class="col-xs-10 col-lg-6 px-5">
       <div class="card border-dark text-center">
         <div class="card-body">
           <h5 class="card-title">
@@ -33,14 +33,14 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-10 col-lg-6 mx-auto">
+    <div class="col-xs-10 col-lg-6 px-5">
       <div class="card border-dark text-center">
         <div class="card-body">
           <h5 class="card-title">
             追試再試情報の閲覧
           </h5>
           <p class="card-text">
-            追試及び再試についての情報を知りたいならこちら
+            追試験及び再試験についての情報を知りたいならこちら
           </p>
           <%= link_to "追試再試情報の閲覧", add_examinations_path, class: "btn btn-lg btn-info stretched-link" %>
         </div>
@@ -57,7 +57,7 @@
           教授陣及び学生を除く学内関係者向け
         </h3>
       </div>
-      <div class="col-xs-12 col-lg-6">
+      <div class="col-xs-12 col-lg-6 px-5">
         <div class="card border-dark text-center">
           <div class="card-body">
             <h5 class="card-title">
@@ -70,20 +70,20 @@
           </div>
         </div>
       </div>
-      <div class="col-xs-12 col-lg-6">
+      <div class="col-xs-12 col-lg-6 px-5">
         <div class="card border-dark text-center">
           <div class="card-body">
             <h5 class="card-title">
               追試再試情報の追加
             </h5>
             <p class="card-text">
-              追試及び再試についての情報を追加するならこちら
+              追試験及び再試験についての情報を追加するならこちら
             </p>
             <%= link_to "追試再試情報の追加", new_add_examination_path, class: "btn btn-lg btn-success stretched-link" %>
           </div>
         </div>
       </div>
-      <div class="col-12">
+      <div class="col-12 px-5">
         <div class="card border-dark text-center">
           <div class="card-body">
             <h5 class="card-title">
