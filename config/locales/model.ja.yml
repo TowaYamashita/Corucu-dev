@@ -224,9 +224,9 @@ ja:
   scaffold:
     index: "一覧"
     show: "詳細"
-    new: "新規作成"
+    new: "新規登録"
     edit: "編集"
-    create: "新規作成"
+    create: "新規登録"
     update: "更新"
     destroy: "削除"
     back: "戻る"
