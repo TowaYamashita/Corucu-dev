@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_27_102405) do
+ActiveRecord::Schema.define(version: 12) do
 
   create_table "add_examinations", force: :cascade do |t|
     t.string "category"
@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(version: 2020_04_27_102405) do
   end
 
   create_table "statuses", force: :cascade do |t|
-    t.boolean "admin_flag", default: false, null: false
     t.boolean "professor_flag", default: false, null: false
     t.boolean "student_flag", default: false, null: false
     t.boolean "guest_flag", default: false, null: false

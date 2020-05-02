@@ -11,7 +11,7 @@ class User < ApplicationRecord
     find_or_create_by!(email: 'guest-browse@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
       user.username = "ゲストユーザ(閲覧用)"
-      user.status_id = 4
+      user.status_id = 3
       user.confirmed_at = Time.now
     end
   end

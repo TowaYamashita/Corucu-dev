@@ -10,18 +10,17 @@
 
 # Statuses
 Status.create([
-    {:admin_flag => 1},
-    {:professor_flag => 1},
-    {:student_flag => 1},
-    {:guest_flag => 1}
+    {:professor_flag => true},
+    {:student_flag => true},
+    {:guest_flag => true}
 ])
 
 # Users
 User.create([
-    {:username => 'admin',     :email => 'admin@example.com',       :password => 'asdfgh', :confirmed_at => Time.now, :status_id => 1, :admin_user => true},
-    {:username => 'professor', :email => 'professor@example.com',  :password => 'aqswde', :confirmed_at => Time.now, :status_id => 2},
-    {:username => 'student',   :email => 'student@example.com', :password => 'qxevrb', :confirmed_at => Time.now, :status_id => 3},
-    {:username => 'guest',     :email => 'guest@example.com',       :password => 'wvrbth', :confirmed_at => Time.now, :status_id => 4}
+    {:username => 'admin',     :email => 'admin@example.com',       :password => 'asdfgh', :confirmed_at => Time.now, :admin_user => true},
+    {:username => 'professor', :email => 'professor@example.com',  :password => 'aqswde', :confirmed_at => Time.now, :status_id => 1},
+    {:username => 'student',   :email => 'student@example.com', :password => 'qxevrb', :confirmed_at => Time.now, :status_id => 2},
+    {:username => 'guest',     :email => 'guest@example.com',       :password => 'wvrbth', :confirmed_at => Time.now, :status_id => 3}
 ])
 
 # Subjects

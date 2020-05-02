@@ -3,9 +3,10 @@ class ApplicationController < ActionController::Base
   before_action :set_current_user
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def check_guest
+  #seeds.rbで作成したユーザの編集や削除を禁止する
+  def check_default
     email = resource&.email || params[:user][:email].downcase
-    if email == 'guest-browse@example.com'
+    if email == 'admin@example.com' || 'professor@example.com' || 'student@example.com' || 'guest@example.com' || 'guest-browse@example.com'
       redirect_to root_path, alert: 'ゲストユーザーの変更・削除はできません。'
     end
   end
