@@ -12,6 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
+    set_status_id
     super
   end
 
@@ -43,7 +44,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute, :status_id])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
@@ -59,5 +60,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # The path used after sign up for inactive accounts.
   def after_inactive_sign_up_path_for(resource)
     super(resource)
+  end
+
+  def set_status_id
+    @email = params.require(:user)[:email]
+    if @email.include?("@sasebo.ac.jp")
+      params.require(:user)[:status_id] = 1
+    elsif @email.include?("@st.sasebo.ac.jp")
+      params.require(:user)[:status_id] = 2
+    else
+      params.require(:user)[:status_id] = 3
+    end
   end
 end
