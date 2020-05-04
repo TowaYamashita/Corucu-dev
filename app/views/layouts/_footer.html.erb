@@ -1,12 +1,32 @@
-<div>
-  <small>
-    Corucu is created by TowaYamashita.
-  </small>
-
-  <nav>
-    <ul>
-      <li><%= link_to "Corucuについて", about_path %></li>
-      <li><%= link_to "お問合せ",       contacts_new_path %></li>
-    </ul>
-  </nav>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4">
+      Corucu
+    </div>
+    <div class="col-4">
+      <div class="nav">
+        About
+        <ul>
+          <li><%= link_to "Corucuについて", about_path %></li>
+          <li><%= link_to "お問い合せ",     contacts_new_path %></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="nav">
+        Social
+        <ul>
+          <li><%= link_to "github", 'https://github.com/TowaYamashita/Corucu-dev' %></li>
+          <li><%= link_to "Qiita", 'https://qiita.com/CAD-guest01' %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-lg-4 mx-auto">
+      <p class="text-center">
+        Copyright 2020 Corucu All Rights Reserved.
+      </p>
+    </div>
+  </div>
 </div>

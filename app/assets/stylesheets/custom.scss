@@ -73,24 +73,20 @@ p {
 /* footer */
 
 footer {
-  margin-top: 0px;
-  padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
-  color: rgba(#a9a9a9,1.0);
+  margin-top: 30px;
+  padding-top: 0px;
+  background-color: #838383;
+  color: rgba(white,1.0);
   a {
-    color: rgba(#808080,1.0);
+    color: rgba(white,1.0);
     &:hover {
       color: rgba(#696969,1.0);
     }
   }
-  small {
-    float: left;
-  }
   ul {
-    float: right;
+    float: left;
     list-style: none;
     li {
-      float: left;
       margin-left: 15px;
     }
   }
@@ -109,10 +105,11 @@ footer {
 .border-main {
   border: 10px double #425d74;
   background-color: whitesmoke;
+  padding-bottom: 30px;
 }
 
 /*背景画像の設定*/
-.bg-colk {
+.background-colk {
   background-image: url("colk0.jpg");
   background-color:rgba(white,0.3);
   background-blend-mode:lighten;
