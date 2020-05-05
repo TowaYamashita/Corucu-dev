@@ -4,16 +4,14 @@
     <title><%= full_title(yield(:title)) %></title>
     <%= render 'layouts/rails_default' %>
   </head>
-  <body class="background-colk">
+  <body class="d-flex flex-column background-colk" style="min-height: 100vh">
     <%= render 'layouts/header' %>
     <%= render 'layouts/current_username' %>
     <%= render 'layouts/flash_message' %>
-    <div class="container-fluid">
+    <div class="container-fluid mb-auto">
       <%= yield %>
     </div>
-  </body>
-  <footer>
     <%= render 'layouts/footer' %>
-  </footer>
-  <%= render 'layouts/bottom_nav' %>
+    <%= render 'layouts/bottom_nav' %>
+  </body>
 </html>
