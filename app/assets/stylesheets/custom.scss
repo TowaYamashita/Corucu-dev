@@ -56,8 +56,6 @@ p {
 
 /* header */
 #logo {
-  float: left;
-  margin-right: 10px;
   font-size: 1.7em;
   color: white;
   text-transform: none;
@@ -73,7 +71,7 @@ p {
 /* footer */
 
 footer {
-  margin-top: 30px;
+  margin-top: 0px;
   padding-top: 0px;
   background-color: #838383;
   color: rgba(white,1.0);
@@ -132,4 +130,10 @@ footer {
 
 .border-dark {
   border: 3px solid black!important;
+}
+
+.bottom-nav {
+  background-color: #bda28b;
+  margin-top: 30px;
+  border: 1px solid black;
 }
