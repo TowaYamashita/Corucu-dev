@@ -1,24 +1,22 @@
 <div class="row">
-  <div class="col-10 col-lg-8 mx-auto p-5">
-    <div class="card text-center border-success">
-      <div class="card-header text-white bg-success">
-        <h1>
-          <%= t('activerecord.models.add_examinations') + "情報を編集" %>
-        </h1>
-      </div>
-
-      <div class="card-body">
-        <%= render 'form', add_examination: @add_examination %>
-      </div>
-    
-      <div class="card-footer">
-        <div class="container">
-          <div class="row">
-            <%= link_to t('scaffold.show'), @add_examination, class: "btn btn-info col-sm-6" %>
-            <%= link_to t('scaffold.back'), add_examinations_path, class: "btn btn-outline-dark col-sm-6" %>
-          </div>
+    <div class="col-10 col-lg-8 mx-auto p-5">
+        <div class="card text-center border-success">
+            <div class="card-header text-white bg-success">
+                <h1>
+                    <%= t('activerecord.models.add_examinations') + "情報を編集" %>
+                </h1>
+            </div>
+            <div class="card-body">
+                <%= render 'form', add_examination: @add_examination %>
+            </div>
+            <div class="card-footer">
+                <div class="container">
+                    <div class="row">
+                        <%= link_to t('scaffold.show'), @add_examination, class: "btn btn-info col-sm-6" %>
+                        <%= link_to t('scaffold.back'), add_examinations_path, class: "btn btn-outline-dark col-sm-6" %>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>

@@ -1,93 +1,89 @@
 @import "bootstrap";
 
-
 /* mixins, variables, etc. */
-
 $gray-medium-light: #eaeaea;
 
 /* universal */
-
 body {
-  padding-top: 0px;
+    padding-top: 0px;
 }
 
 section {
-  overflow: auto;
+    overflow: auto;
 }
 
 textarea {
-  resize: vertical;
+    resize: vertical;
 }
 
 .center {
-  text-align: center;
-  h1 {
-    margin-bottom: 10px;
-  }
+    text-align: center;
+    h1 {
+        margin-bottom: 10px;
+    }
 }
 
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
+    line-height: 1;
 }
 
 h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
+    font-size: 3em;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: rgba(#a9a9a9,1.0);
+    font-size: 1.2em;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: normal;
+    color: rgba(#a9a9a9,1.0);
 }
 
 p {
-  font-size: 1.1em;
-  line-height: 1.7em;
+    font-size: 1.1em;
+    line-height: 1.7em;
 }
 
 
 /* header */
 #logo {
-  font-size: 1.7em;
-  color: white;
-  text-transform: none;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  &:hover {
+    font-size: 1.7em;
     color: white;
-    text-decoration: none;
-  }
+    text-transform: none;
+    letter-spacing: -1px;
+    padding-top: 9px;
+    font-weight: bold;
+    &:hover {
+        color: white;
+        text-decoration: none;
+    }
 }
 
 /* footer */
-
 footer {
-  margin-top: 0px;
-  padding-top: 0px;
-  background-color: #838383;
-  color: rgba(white,1.0);
-  a {
+    margin-top: 0px;
+    padding-top: 0px;
+    background-color: #838383;
     color: rgba(white,1.0);
-    &:hover {
-      color: rgba(#696969,1.0);
+    a {
+        color: rgba(white,1.0);
+        &:hover {
+            color: rgba(#696969,1.0);
+        }
     }
-  }
-  ul {
-    float: left;
-    list-style: none;
-    li {
-      margin-left: 15px;
+    ul {
+        float: left;
+        list-style: none;
+        li {
+            margin-left: 15px;
+        }
     }
-  }
 }
 
 /*入力フォームの日付の記入欄を横並びに変更*/
@@ -95,45 +91,45 @@ footer {
 /*width: autoでは横並びにならないため、親要素に対する割合を指定して対策*/
 /*!importantとwidth: 32%は解決策が見つかり次第リファクタする*/
 .bootstrap-date {
-  display: inline-block!important;
-  width: 32%!important;
+    display: inline-block!important;
+    width: 32%!important;
 }
 
 /*トップページのjumbotronの枠線を追加*/
 .border-main {
-  border: 10px double #425d74;
-  background-color: whitesmoke;
-  padding-bottom: 30px;
+    border: 10px double #425d74;
+    background-color: whitesmoke;
+    padding-bottom: 30px;
 }
 
 /*背景画像の設定*/
 .background-colk {
-  background-image: url("colk0.jpg");
-  background-color:rgba(white,0.3);
-  background-blend-mode:lighten;
+    background-image: url("colk0.jpg");
+    background-color:rgba(white,0.3);
+    background-blend-mode:lighten;
 }
 
 /*デスクトップ(lg)での表示の際に横幅を70%に狭める*/
 @media (min-width: 992px) {
-  .pc-width {
-    width: 70%;
-    margin: auto;
-  }
+    .pc-width {
+        width: 70%;
+        margin: auto;
+    }
 }
 
 .jumbotron-original {
-  text-align: center;
-  background-color: whitesmoke;
-  padding: 30px 0px;
-  margin-bottom: 30px;
+    text-align: center;
+    background-color: whitesmoke;
+    padding: 30px 0px;
+    margin-bottom: 30px;
 }
 
 .border-dark {
-  border: 3px solid black!important;
+    border: 3px solid black!important;
 }
 
 .bottom-nav {
-  background-color: #bda28b;
-  margin-top: 30px;
-  border: 1px solid black;
+    background-color: #bda28b;
+    margin-top: 30px;
+    border: 1px solid black;
 }

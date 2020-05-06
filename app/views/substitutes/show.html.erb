@@ -1,67 +1,65 @@
 <div class="row">
-  <div class="col-10 col-lg-8 mx-auto p-5">
-    <div class="card text-center border-info">
-      <div class="card-header text-white bg-info">
-        <h1>
-          <%= t('scaffold.show') %>
-        </h1>
-      </div>
-
-      <div class="card-body">
-        <div class="d-flex border border-dark">
-          <div class="flex-column align-self-baseline p-2">
-            <strong>
-              <%= t('activerecord.attributes.substitute.changed_at') %>
-            </strong>
-          </div>
-          <div class="ml-auto p-2">
-            <%= @substitute.changed_at %>
-          </div>
+    <div class="col-10 col-lg-8 mx-auto p-5">
+        <div class="card text-center border-info">
+            <div class="card-header text-white bg-info">
+                <h1>
+                    <%= t('scaffold.show') %>
+                </h1>
+            </div>
+            <div class="card-body">
+                <div class="d-flex border border-dark">
+                    <div class="flex-column align-self-baseline p-2">
+                        <strong>
+                            <%= t('activerecord.attributes.substitute.changed_at') %>
+                        </strong>
+                    </div>
+                    <div class="ml-auto p-2">
+                        <%= @substitute.changed_at %>
+                    </div>
+                </div>
+                <div class="d-flex border border-dark">
+                    <div class="flex-column align-self-baseline p-2">
+                        <strong>
+                            <%= t('activerecord.attributes.substitute.period') %>
+                        </strong>
+                    </div>
+                    <div class="ml-auto p-2">
+                        <%= @substitute.period %>
+                    </div>
+                </div>
+                <div class="d-flex border border-dark">
+                    <div class="flex-column align-self-baseline p-2">
+                        <strong>
+                            <%= t('activerecord.attributes.subject.course') %>
+                        </strong>
+                    </div>
+                    <div class="ml-auto p-2">
+                        <%= @substitute.subject.course %>
+                    </div>
+                </div>
+                <div class="d-flex border border-dark">
+                    <div class="flex-column align-self-baseline p-2">
+                        <strong>
+                            <%= t('activerecord.attributes.substitute.comment') %>
+                        </strong>
+                    </div>
+                    <div class="ml-auto p-2">
+                        <%= @substitute.comment %>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="container">
+                    <div class="row">
+                        <% if user_signed_in? && ( @substitute.user_id == current_user.id || current_user.admin_user == true ) %>
+                            <%= link_to t('scaffold.edit'), edit_substitute_path(@substitute), class: "btn btn-success col-sm-6" %>
+                            <%= link_to t('scaffold.back'), substitutes_path, class: "btn btn-outline-dark col-sm-6" %>
+                        <% else %>
+                            <%= link_to t('scaffold.back'), substitutes_path, class: "btn btn-outline-dark btn-block" %>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="d-flex border border-dark">
-          <div class="flex-column align-self-baseline p-2">
-            <strong>
-              <%= t('activerecord.attributes.substitute.period') %>
-            </strong>
-          </div>
-          <div class="ml-auto p-2">
-            <%= @substitute.period %>
-          </div>
-        </div>
-        <div class="d-flex border border-dark">
-          <div class="flex-column align-self-baseline p-2">
-            <strong>
-              <%= t('activerecord.attributes.subject.course') %>
-            </strong>
-          </div>
-          <div class="ml-auto p-2">
-            <%= @substitute.subject.course %>
-          </div>
-        </div>
-        <div class="d-flex border border-dark">
-          <div class="flex-column align-self-baseline p-2">
-            <strong>
-              <%= t('activerecord.attributes.substitute.comment') %>
-            </strong>
-          </div>
-          <div class="ml-auto p-2">
-            <%= @substitute.comment %>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card-footer">
-        <div class="container">
-          <div class="row">
-            <% if user_signed_in? && ( @substitute.user_id == current_user.id || current_user.admin_user == true ) %>
-              <%= link_to t('scaffold.edit'), edit_substitute_path(@substitute), class: "btn btn-success col-sm-6" %>
-              <%= link_to t('scaffold.back'), substitutes_path, class: "btn btn-outline-dark col-sm-6" %>
-            <% else %>
-              <%= link_to t('scaffold.back'), substitutes_path, class: "btn btn-outline-dark btn-block" %>
-            <% end %>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 </div>

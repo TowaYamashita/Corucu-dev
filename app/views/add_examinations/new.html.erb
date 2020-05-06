@@ -1,19 +1,17 @@
 <div class="row">
-  <div class="col-10 col-lg-8 mx-auto p-5">
-    <div class="card text-center">
-      <div class="card-header">
-        <h1>
-          <%= t('activerecord.models.add_examinations') + "情報の新規登録" %>
-        </h1>
-      </div>
-  
-      <div class="card-body">
-        <%= render 'form', add_examination: @add_examination %>
-      </div>
-  
-      <div class="card-footer text-muted">
-        <%= link_to t('scaffold.back'), add_examinations_path, class: "btn btn-outline-dark btn-block" %>
-      </div>
+    <div class="col-10 col-lg-8 mx-auto p-5">
+        <div class="card text-center">
+            <div class="card-header">
+                <h1>
+                    <%= t('activerecord.models.add_examinations') + "情報の新規登録" %>
+                </h1>
+            </div>
+            <div class="card-body">
+                <%= render 'form', add_examination: @add_examination %>
+            </div>
+            <div class="card-footer text-muted">
+                <%= link_to t('scaffold.back'), add_examinations_path, class: "btn btn-outline-dark btn-block" %>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
