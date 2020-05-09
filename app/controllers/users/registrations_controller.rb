@@ -63,10 +63,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
         end
 
         def set_status_id
-            @email = params.require(:user)[:email]
-            if @email.include?("@sasebo.ac.jp")
+            email = params.require(:user)[:email]
+            if email.include?("@sasebo.ac.jp")
                 params.require(:user)[:status_id] = 1
-            elsif @email.include?("@st.sasebo.ac.jp")
+            elsif email.include?("@st.sasebo.ac.jp")
                 params.require(:user)[:status_id] = 2
             else
                 params.require(:user)[:status_id] = 3
